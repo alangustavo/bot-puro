@@ -1,6 +1,6 @@
 import sqlite3 from 'sqlite3';
 
-class Database {
+export default class Database {
     private static instance: Database;
     private db: sqlite3.Database;
 
@@ -17,13 +17,13 @@ class Database {
         return Database.instance;
     }
 
-    public async run(query: string, params: unknown[] = []): Promise<void> {
+    public async run(query: string, params: unknown[] = []): Promise<{ lastID?: number, changes?: number; }> {
         return new Promise((resolve, reject) => {
-            this.db.run(query, params, (err) => {
+            this.db.run(query, params, function (err) {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve();
+                    resolve({ lastID: this.lastID, changes: this.changes });
                 }
             });
         });
@@ -54,18 +54,33 @@ class Database {
     }
 
     public async initialize(): Promise<void> {
-        const createTableQuery = `
+        const createClientTableQuery = `
             CREATE TABLE IF NOT EXISTS clients (
-                chatId INTEGER PRIMARY KEY,
+                chatId INTEGER NOT NULL PRIMARY KEY,
                 name TEXT,
                 email TEXT,
                 binanceApiKey TEXT,
                 binanceApiSecret TEXT,
                 active BOOLEAN DEFAULT false
-            )
+            );
         `;
-        await this.run(createTableQuery);
+        await this.run(createClientTableQuery);
+        const createOperationsTableQuery = `
+            CREATE TABLE IF NOT EXISTS operations (
+                operationId INTEGER PRIMARY KEY AUTOINCREMENT,
+                chatId INTEGER NOT NULL,
+                symbol TEXT NOT NULL,
+                buyPrice REAL NOT NULL,
+                buyDate INTEGER NOT NULL,
+                buyCriteria TEXT NOT NULL,
+                sellPrice REAL,
+                sellDate INTEGER,
+                sellCriteria TEXT,
+                FOREIGN KEY (chatId) REFERENCES clients(chatId)
+            );
+        `;
+        await this.run(createOperationsTableQuery);
     }
 }
 
-export default Database;
+

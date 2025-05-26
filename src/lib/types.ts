@@ -48,3 +48,6 @@ export interface EventKline extends event {
         B: string; // Ignore
     };
 }
+
+
+export type Status = 'BOUGHT' | 'SOLD';

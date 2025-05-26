@@ -1,4 +1,6 @@
-import { event } from './types';
+import DataManager from './DataManager';
+import Kline from './Kline';
+import type { event, Interval } from './types';
 export interface AggTradeEvent {
     e: string; // Event type
     E: number; // Event time
@@ -62,7 +64,7 @@ export function createEvent(data: EventData): AggTradeEvent | KlineEvent | null 
     }
 
     if (data.e === 'kline') {
-
+        // console.log('Kline event:', data);
         event = {
             e: data.e,
             E: data.E,
@@ -87,8 +89,13 @@ export function createEvent(data: EventData): AggTradeEvent | KlineEvent | null 
                 B: data.k.B,
             },
         } as KlineEvent;
-
-
+        const dataManager = DataManager.getInstance();
+        const klines = dataManager.getKlines(event.k.s, event.k.i as Interval);
+        if (klines) {
+            const kline = Kline.fromEvent(event);
+            klines.addKline(kline);
+        }
+        return event;
     }
 
     console.warn('Unknown event type:', data);

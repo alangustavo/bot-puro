@@ -1,6 +1,6 @@
 import WebSocket from 'ws';
-import { createEvent } from './eventFactory';
-import ChatManager from './chatManager';
+import { createEvent } from './EventFactory';
+import ChatManager from './ChatManager';
 
 export default class BinanceStreamManager {
     private static instance: BinanceStreamManager;
@@ -63,7 +63,7 @@ export default class BinanceStreamManager {
         // console.log('Message received:', data.toString());
         try {
             const parsedData = JSON.parse(data.toString());
-            console.log(createEvent(parsedData)); // Chama a função createEvent com o conteúdo da mensagem
+            createEvent(parsedData); // Chama a função createEvent com o conteúdo da mensagem
         } catch (error) {
             const chatManager = await ChatManager.getInstance();
             if (error instanceof Error) {

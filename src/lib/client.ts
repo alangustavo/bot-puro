@@ -1,5 +1,6 @@
-import ChatManager from './chatManager';
-import Database from './database';
+import ChatManager from './ChatManager';
+import Database from './Database';
+import { encrypt, decrypt } from './cryptoUtils';
 
 
 
@@ -16,15 +17,17 @@ class Client {
         this.chatId = chatId;
         this.name = name;
         this.email = email;
-        this.binanceApiKey = binanceApiKey;
-        this.binanceApiSecret = binanceApiSecret;
+        this.binanceApiKey = binanceApiKey ? decrypt(binanceApiKey) : '';
+        this.binanceApiSecret = binanceApiSecret ? decrypt(binanceApiSecret) : '';
         this.active = active;
+
+
     }
 
     private async sendMessage(message: string): Promise<void> {
         const chat = await ChatManager.getInstance();
         if (this.chatId) {
-            chat.sendMessage(this.chatId, message);
+            chat.sendFormattedMessage(this.chatId, message);
         }
     }
 
@@ -77,8 +80,15 @@ class Client {
     public async save(): Promise<void> {
         const db = await Database.getInstance();
         await db.run(
-            'INSERT INTO clients (chatId, name, email, binanceApiKey, binanceApiSecret, active) VALUES (?, ?, ?, ?, ?, ?) ON CONFLICT(chatId) DO UPDATE SET name=excluded.name, email=excluded.email, binanceApiKey=excluded.binanceApiKey, binanceApiSecret=excluded.binanceApiSecret, active=excluded.active',
-            [this.chatId, this.name, this.email, this.binanceApiKey, this.binanceApiSecret, this.active]
+            'INSERT OR REPLACE INTO clients (chatId, name, email, binanceApiKey, binanceApiSecret, active) VALUES (?, ?, ?, ?, ?, ?)',
+            [
+                this.chatId,
+                this.name,
+                this.email,
+                encrypt(this.binanceApiKey),
+                encrypt(this.binanceApiSecret),
+                this.active
+            ]
         );
     }
 
