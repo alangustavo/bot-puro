@@ -49,5 +49,23 @@ export interface EventKline extends event {
     };
 }
 
+export type OHLCV = {
+    o: number;
+    h: number;
+    l: number;
+    c: number;
+    v: number;
+};
+
+export type KlineData = {
+    timestamp: number;
+    open: number;
+    high: number;
+    low: number;
+    close: number;
+    volume: number;
+};
 
 export type Status = 'BOUGHT' | 'SOLD';
+
+export type Signal = 'BUY' | 'SELL' | 'HOLD';

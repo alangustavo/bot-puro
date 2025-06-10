@@ -1,7 +1,7 @@
 import BinanceStreamManager from "./BinanceStreamManager";
 import HistoricalKlines from "./HistoricalKlines";
 import Kline from "./Kline";
-import type { Interval } from "./types";
+import type { Interval, KlineData, OHLCV } from "./types";
 
 export default class Klines {
     private limit: number;
@@ -25,9 +25,11 @@ export default class Klines {
 
     public async fetchKlines() {
         console.log(`Fetching klines for ${this.symbol} with interval ${this.interval}`);
+
         if (this.klines.length === 0) {
             const historicalKlines = HistoricalKlines.getInstance();
             const data = await historicalKlines.fetchKlines(this.symbol, this.interval, undefined, undefined, this.limit);
+
             // biome-ignore lint/suspicious/noExplicitAny: <explanation>
             data.map((klineData: any) => {
                 const kline = Kline.fromArray(klineData);
@@ -71,5 +73,27 @@ export default class Klines {
     }
     public getVolumes(): number[] {
         return this.klines.map(kline => kline.volume);
+    }
+
+    public getOhlcv(): OHLCV[] {
+        return this.klines.map(kline => ({
+            o: kline.open,
+            h: kline.high,
+            l: kline.low,
+            c: kline.close,
+            v: kline.volume,
+        }));
+    }
+
+    public getKlines(): KlineData[] {
+        return this.klines.map(kline => ({
+            timestamp: kline.startTime,
+            open: kline.open,
+            high: kline.high,
+            low: kline.low,
+            close: kline.close,
+            volume: kline.volume
+        }));
+
     }
 }

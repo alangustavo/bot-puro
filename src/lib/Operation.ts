@@ -1,3 +1,4 @@
+import ChatManager from "./ChatManager";
 import Database from "./Database";
 
 export default class Operation {
@@ -11,46 +12,67 @@ export default class Operation {
     public sellPrice: number;
     public sellDate: number;
     public sellCriteria: string;
+    /**
+     * 
+     * @param chatId 
+     * @param symbol 
+     * @param buyPrice 
+     * @param buyDate 
+     * @param buyCriteria 
+     */
     constructor(chatId: number, symbol: string, buyPrice: number, buyDate: number, buyCriteria: string) {
         this.operationId = null; // This will be set by the database
         this.chatId = chatId;
         this.symbol = symbol;
-        this.buyPrice = buyPrice;
+        this.buyPrice = buyPrice * 1.001;
         this.buyDate = buyDate;
         this.buyCriteria = buyCriteria;
         this.sellPrice = 0; // This will be set when the operation is closed
         this.sellDate = 0; // This will be set when the operation is closed
         this.sellCriteria = ''; // This will be set when the operation is closed
+        this.sendOperationToTelegram();
     }
 
-    public getMessage(price: number): string {
+    public getBuyMessage(price: number): string {
         return `
-            SYMBOL.......: ${this.symbol}
-            BUY PRICE....: ${this.buyPrice}
-            BUY DATE.....: ${new Date(this.buyDate).toLocaleString()}
-            BUY CRITERIA.: ${this.buyCriteria}
-            CURRENT PRICE: ${price}
-            P/L..........: ${price / this.buyPrice}
+<pre>
+SYMBOL.......: ${this.symbol}
+BUY PRICE....: ${this.buyPrice}
+BUY DATE.....: ${new Date(this.buyDate).toLocaleString()}
+BUY CRITERIA.: ${this.buyCriteria}
+CURRENT PRICE: ${price}
+P/L..........: N/A
+</pre>
         `;
     }
 
     public toString(): string {
         return `
-            SYMBOL.......: ${this.symbol}
-            BUY PRICE....: ${this.buyPrice}
-            BUY DATE.....: ${new Date(this.buyDate).toLocaleString()}
-            BUY CRITERIA.: ${this.buyCriteria}
-            SELL PRICE...: ${this.sellPrice}
-            SELL DATE....: ${new Date(this.sellDate).toLocaleString()}
-            SELL CRITERIA: ${this.sellCriteria}
-            P/L..........: ${this.sellPrice / this.buyPrice}`;
+<pre>
+SYMBOL.......: ${this.symbol}
+BUY PRICE....: ${this.buyPrice}
+BUY DATE.....: ${new Date(this.buyDate).toLocaleString()}
+BUY CRITERIA.: ${this.buyCriteria}
+SELL PRICE...: ${this.sellPrice}
+SELL DATE....: ${new Date(this.sellDate).toLocaleString()}
+SELL CRITERIA: ${this.sellCriteria}
+P/L..........: ${(this.sellPrice / this.buyPrice) - 1 * 100}%
+</pre>`;
+
     }
 
     public async sell(sellPrice: number, sellDate: number, sellCriteria: string): Promise<void> {
-        this.sellPrice = sellPrice;
+        this.sellPrice = sellPrice * 0.999; // Ajuste de 0.1% para venda
         this.sellDate = sellDate;
         this.sellCriteria = sellCriteria;
         await this.save();
+        this.sendOperationToTelegram();
+
+    }
+
+    private async sendOperationToTelegram(): Promise<void> {
+        const chatManager = await ChatManager.getInstance();
+        chatManager.sendMessage(this.chatId, this.toString());
     }
 
     public async save(): Promise<void> {

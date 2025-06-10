@@ -1,4 +1,4 @@
-import type Klines from "./Klines";
+import Klines from "./Klines";
 import type { Interval } from "./types";
 
 export default class DataManager {
@@ -20,11 +20,12 @@ export default class DataManager {
         this.data.set(klines.getKey(), klines);
     }
 
-    public getKlines(symbol: string, interval: Interval): Klines {
+    public getKlines(symbol: string, interval: Interval, limit = 1000): Klines {
         const index = `${symbol.toLowerCase()}_${interval}`;
-        const klines = this.data.get(index);
+        let klines = this.data.get(index);
         if (!klines) {
-            throw new Error(`Klines data not found for symbol: ${symbol}, interval: ${interval}`);
+            klines = new Klines(symbol, interval, limit);
+            this.setKlines(klines);
         }
         return klines;
     }

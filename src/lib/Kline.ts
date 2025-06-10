@@ -40,19 +40,37 @@ export default class Kline {
         return kline;
     }
 
+
+    /**
+     * 
+     * @param data  
+     * @returns 
+     * [
+    1499040000000,      // Kline open time
+    "0.01634790",       // Open price
+    "0.80000000",       // High price
+    "0.01575800",       // Low price
+    "0.01577100",       // Close price
+    "148976.11427815",  // Volume
+    1499644799999,      // Kline Close time
+    "2434.19055334",    // Quote asset volume
+    308,                // Number of trades
+    "1756.87402397",    // Taker buy base asset volume
+    "28.46694368",      // Taker buy quote asset volume
+    "0"                 // Unused field, ignore.
+  ]
+     */
     // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     public static fromArray(data: any[]): Kline {
         const kline = new Kline();
         kline.startTime = data[0];
         kline.closeTime = data[6];
-        kline.symbol = data[1];
-        kline.interval = data[2];
-        kline.open = Number.parseFloat(data[3]);
+        kline.open = Number.parseFloat(data[1]);
         kline.close = Number.parseFloat(data[4]);
-        kline.high = Number.parseFloat(data[5]);
-        kline.low = Number.parseFloat(data[7]);
-        kline.volume = Number.parseFloat(data[8]);
-        kline.trades = data[9];
+        kline.high = Number.parseFloat(data[2]);
+        kline.low = Number.parseFloat(data[3]);
+        kline.volume = Number.parseFloat(data[5]);
+        kline.trades = data[8];
         return kline;
     }
 }

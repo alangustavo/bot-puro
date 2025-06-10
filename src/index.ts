@@ -9,15 +9,30 @@ import type { Status } from './lib/types';
 import Database from "./lib/Database";
 import Operation from "./lib/Operation";
 import BotSMA from "./lib/BotSMA";
+import BotSupportResistance from './lib/BotSupportResistance';
+import BotSMASupportResistance from "./lib/BotSMASupportResistance";
+import { TradingBot, TradingBotConfig } from "./lib/TradingBot";
+import { BotSupperTrend, BotSupperTrendConfig } from "./lib/BotSuperTrend";
+import { BotRSIEMA, BotRSIMAConfig } from "./lib/BotRSIEMA";
 dotenv.config();
 
 console.log('Starting bot...');
 console.log(`URL: ${process.env.BINANCE_STREAM_URL}`);
 (async () => {
     await Database.getInstance();
-    const chatManager = await ChatManager.getInstance();
-    chatManager.start();
-    console.log('Bot started and running...');
+    const config = new BotRSIMAConfig(
+        'SOLUSDT',
+        '1m',
+        '15m',
+        7, 9, 11, 0.01, 0.005
+    );
+    const bot = new BotRSIEMA(Number(process.env.TELEGRAM_CHAT_ID), config);
+    await bot.start();
+
+
+    // const chatManager = await ChatManager.getInstance();
+    // chatManager.start();
+    // console.log('Bot started and running...');
 
 
     // const dataManager = DataManager.getInstance();
@@ -30,20 +45,53 @@ console.log(`URL: ${process.env.BINANCE_STREAM_URL}`);
     // await new Promise(resolve => setTimeout(resolve, 10000));
     // op.sell(180, Date.now(), 'TESTE DE VENDA');
 
-    const indicators = new Indicators();
+    // const botConfig = new TradingBotConfig("SOLUSDT", "1m");
 
-    const botSMA = new BotSMA(
-        Number(process.env.TELEGRAM_CHAT_ID),
-        'SOLUSDT',
-        '1m',
-        15,
-        50,
-        0.98,
-        0.995,
-        1.007
-    );
-    await botSMA.start();
 
+    // const bot3 = new TradingBot(
+    //     Number(process.env.TELEGRAM_CHAT_ID),
+    //     botConfig);
+
+    /**
+     *         chatId: number,
+             symbol: string,
+             interval: Interval,
+             shortSMA: number,
+             longSMA: number,
+             stopLossPercent = 0.98,
+             trailingStopLossPercent = 0.995,
+             trailingStopLossActivePercent = 1.007,
+             distanceResistance = 0.99,
+             distanceSupport = 1.005,
+             window = 50
+     */
+
+    // const bot2 = new BotSMASupportResistance(
+    //     Number(process.env.TELEGRAM_CHAT_ID),
+    //     'SOLUSDT',
+    //     '1m',
+    //     15,
+    //     50,
+    //     0.98,
+    //     0.995,
+    //     1.007,
+    //     1.01,
+    //     0.995,
+    //     300
+    // );
+
+    // const bot = new BotSupportResistance(
+    //     Number(process.env.TELEGRAM_CHAT_ID),
+    //     'SOLUSDT',
+    //     '1m',
+    //     1000,
+    //     0.98,
+    //     0.995,
+    //     1.007,
+
+    // );
+    // bot2.start();
+    // bot.start();
     // const stopLossPercent = 0.98;
     // const trailingStopLossPercent = 0.995;
     // const trailingStopLossActivePercent = 1.007;
