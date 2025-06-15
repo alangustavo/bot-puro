@@ -35,20 +35,16 @@ export default class Operation {
 
     public getBuyMessage(price: number): string {
         return `
-<pre>
 SYMBOL.......: ${this.symbol}
 BUY PRICE....: ${this.buyPrice}
 BUY DATE.....: ${new Date(this.buyDate).toLocaleString()}
 BUY CRITERIA.: ${this.buyCriteria}
 CURRENT PRICE: ${price}
-P/L..........: N/A
-</pre>
-        `;
+P/L..........: N/A`;
     }
 
     public toString(): string {
         return `
-<pre>
 SYMBOL.......: ${this.symbol}
 BUY PRICE....: ${this.buyPrice}
 BUY DATE.....: ${new Date(this.buyDate).toLocaleString()}
@@ -56,9 +52,7 @@ BUY CRITERIA.: ${this.buyCriteria}
 SELL PRICE...: ${this.sellPrice}
 SELL DATE....: ${new Date(this.sellDate).toLocaleString()}
 SELL CRITERIA: ${this.sellCriteria}
-P/L..........: ${(this.sellPrice / this.buyPrice) - 1 * 100}%
-</pre>`;
-
+P/L..........: ${(this.sellPrice / this.buyPrice) - 1 * 100}%`;
     }
 
     public async sell(sellPrice: number, sellDate: number, sellCriteria: string): Promise<void> {
@@ -71,8 +65,9 @@ P/L..........: ${(this.sellPrice / this.buyPrice) - 1 * 100}%
     }
 
     private async sendOperationToTelegram(): Promise<void> {
+
         const chatManager = await ChatManager.getInstance();
-        chatManager.sendMessage(this.chatId, this.toString());
+        chatManager.sendMessage(this.chatId, `<code>${this.toString()}</code>`);
     }
 
     public async save(): Promise<void> {
