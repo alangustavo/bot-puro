@@ -114,58 +114,58 @@ class BotRSIEMA extends Bot {
         const previoSlow01mEMA = slow01mEMA[slow01mEMA.length - 2] || 0;
         const crossActual01EMA = actualfast01mEMA > actualslow01mEMA;
         const crossPrevio01EMA = previoFast01mEMA > previoSlow01mEMA;
-        let opReason = 'NO REASON';
+        let opReason = '';
 
         const actualPrice = closes[closes.length - 1] || 0;
 
         // Definindo os Status do Bot
         if (previo15mRSI > 80) {
             this.botRSI15mStatus = 'RSI_ABOVE_80';
-            opReason = 'RSI 15m > 80';
+            opReason += 'RSI 15m > 80\n';
         } else if (previo15mRSI < 20) {
             this.botRSI15mStatus = 'RSI_BELOW_20';
-            opReason = 'RSI 15m < 20';
+            opReason += 'RSI 15m < 20\n';
         }
 
         if (crossActual15EMA && !crossPrevio15EMA) {
             this.botEMA15mStatus = 'CROSS_UP';
-            opReason = 'CROSS UP 15m EMA';
+            opReason += 'CROSS UP 15m EMA\n';
         } else if (!crossActual15EMA && crossPrevio15EMA) {
             this.botEMA15mStatus = 'CROSS_DOWN';
-            opReason = 'CROSS DOWN 15m EMA';
+            opReason += 'CROSS DOWN 15m EMA\n';
         } else if (actualFast15mEMA > actualSlow15mEMA) {
             this.botEMA15mStatus = 'UP';
-            opReason = 'EMA 15m UP';
+            opReason += 'EMA 15m UP\n';
         } else {
             this.botEMA15mStatus = 'DOWN';
-            opReason = 'EMA 15m DOWN';
+            opReason += 'EMA 15m DOWN\n';
         }
 
         // Definindo os Status do Bot
         if (previo01mRSI > 80) {
             this.botRSI01mStatus = 'RSI_ABOVE_80';
-            opReason = 'RSI 01m > 80';
+            opReason += 'RSI 01m > 80\n';
         } else if (previo01mRSI < 20) {
             this.botRSI01mStatus = 'RSI_BELOW_20';
-            opReason = 'RSI 01m < 20';
+            opReason += 'RSI 01m < 20\n';
         } else {
-            opReason = 'RSI 01m >= 20 AND <= 80';
+            opReason += 'RSI 01m >= 20 AND <= 80\n';
             this.botRSI01mStatus = 'NONE';
         }
 
 
         if (crossActual01EMA && !crossPrevio01EMA) {
             this.botEMA01mStatus = 'CROSS_UP';
-            opReason = 'CROSS UP 01m EMA';
+            opReason += 'CROSS UP 01m EMA\n';
         } else if (!crossActual01EMA && crossPrevio01EMA) {
             this.botEMA01mStatus = 'CROSS_DOWN';
-            opReason = 'CROSS DOWN 01m EMA';
+            opReason += 'CROSS DOWN 01m EMA\n';
         } else if (actualfast01mEMA > actualslow01mEMA) {
             this.botEMA01mStatus = 'UP';
-            opReason = 'EMA 01m UP';
+            opReason += 'EMA 01m UP\n';
         } else {
             this.botEMA01mStatus = 'DOWN';
-            opReason = 'EMA 01m DOWN';
+            opReason += 'EMA 01m DOWN\n';
         }
 
 
