@@ -118,6 +118,15 @@ class BotStochRSI extends Bot {
     protected async analyzeMarket(date: number = 0): Promise<void> {
         const i = new Indicators();
         const closes = DataManager.getInstance().getKlines(this.config.symbol, this.config.interval).getClosePrices();
+        const klines = DataManager.getInstance().getKlines(this.config.symbol, this.config.interval).getKlines();
+
+        const lastKline = klines[klines.length - 1];
+        const openPrice = lastKline.open;
+        const closePrice = lastKline.close;
+        const highPrice = lastKline.high;
+        const lowPrice = lastKline.low;
+        const volume = lastKline.volume;
+        // Convert to seconds
 
         const startTimes = DataManager.getInstance().getKlines(this.config.symbol, this.config.interval).getStartTimes();
 
@@ -234,9 +243,9 @@ class BotStochRSI extends Bot {
 
         if (
 
-            stochK > 30 && stochK < 40 &&
+            // stochK > 30 && stochK < 40 &&
             //(stochRSI !== 100 && previoStochRSI !== 100) && // Evita saturação
-            previoStochRSI !== 0 &&
+            // previoStochRSI !== 0 &&
             previoStochK > previoStochD &&
             stochK > stochD
             // (crossUpRSI || UpKD) &&
@@ -283,9 +292,9 @@ class BotStochRSI extends Bot {
             this.intention = 'HOLD';
         }
 
-        this.header = `Date,Status,Symbol,Price,StochRSI,K,D,PrevioK,PrevioD,PrevioShortEma,PrevioLongEma,ShortEma,LongEma,PrevioObv,Obv,PrevioRsiShort,PrevioRsiLong,RsiShort,RsiLong`;
-        const row = `${actualDateString},${this.status},${this.config.symbol},${actualPrice.toFixed(2)},${stochRSI.toFixed(3)},${previoStochRSI},${previoStochK.toFixed(3)},${previoStochD.toFixed(3)},${stochK.toFixed(3)},${stochD.toFixed(3)},${previoShortEma.toFixed(3)},${previoLongEma.toFixed(3)},${shortEma.toFixed(3)},${longEma.toFixed(3)},${previoObv.toFixed(3)}, ${obv.toFixed(2)},${previoRsiShort.toFixed(3)},${previoRsiLong.toFixed(3)},${rsiShort.toFixed(3)},${rsiLong.toFixed(3)}`;
-        // this.sendMessage(row);
+        this.header = `Date,Status,Symbol,openPrice,highPrice,lowPrice,closPrice,volume,StochRSI,PrevioStochRSI,PrevioK,PrevioD,K,D,PrevioShortEma,PrevioLongEma,ShortEma,LongEma,PrevioObv,Obv,PrevioRsiShort,PrevioRsiLong,RsiShort,RsiLong`;
+        const row = `${actualDateString},${this.status},${this.config.symbol},${openPrice},${highPrice},${lowPrice},${closePrice},${volume},${stochRSI.toFixed(3)},${previoStochRSI},${previoStochK.toFixed(3)},${previoStochD.toFixed(3)},${stochK.toFixed(3)},${stochD.toFixed(3)},${previoShortEma.toFixed(3)},${previoLongEma.toFixed(3)},${shortEma.toFixed(3)},${longEma.toFixed(3)},${previoObv.toFixed(3)}, ${obv.toFixed(2)},${previoRsiShort.toFixed(3)},${previoRsiLong.toFixed(3)},${rsiShort.toFixed(3)},${rsiLong.toFixed(3)}`;
+
         this.csv.writeCsv(this.csvFileName, this.header, row);
 
 
@@ -353,6 +362,7 @@ class BotStochRSI extends Bot {
                     this.sendMessage(`Active Trailing Stop Loss at ${this.trailingStopLossPrice.toFixed(2)} ${(this.config.trailingStopLossPercent * 100).toFixed(3)}%`);
                     this.results.writeCsv(this.resultsFileName, this.headerResult, `Active Trailing Stop Loss at ${this.trailingStopLossPrice.toFixed(2)} ${(this.config.trailingStopLossPercent * 100).toFixed(3)}%`);
                 }
+                this.trailingStopLossActive = true;
                 if (this.trailingStopLossActive) {
                     let newStopLossPrice = actualPrice * (1 - this.config.trailingStopLossPercent);
                     if (this.trailingStopLossPrice !== null && newStopLossPrice > this.trailingStopLossPrice) {

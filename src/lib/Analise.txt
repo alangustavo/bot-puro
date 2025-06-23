@@ -1,365 +1,369 @@
 BUY INDICATORS:
-Stoch RSI K D RSI.: K 58.083 D 30.580 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 29.204 D 23.815 RSI 74.249 OK!
-OBV...............: 36682720.91 CRESCENTE Previous 36273049.38
-RSI Short/Long....: 71.020/70.970 Previous 69.000/69.950
-EMA S/L...........: 217.259/215.022 OK! Previous 215.028/212.788
-Change Trailing Stop Loss Price to 221.79 0.947% 
-P/L..........: -1.15%
+Stoch RSI K D RSI.: K 37.755 D 23.804 58.61% RSI 39.017 OK! RSI DOWN
+Stoch RSI Previous: K 29.204 D 23.815 22.63% RSI 74.249 OK!
+OBV...............: 36148632.28 DECRESCENTE Previous 36273049.38
+RSI Short/Long....: 58.950/64.390 -8.45% Previous 69.000/69.950 -1.36%
+EMA S/L...........: 215.469/213.829 -0.76% OK! Previous 215.028/212.788 -1.04%
+Actual Price 221.79 Change Trailing Stop Loss Price to 219.57 1.595% 
+P/L..........: 1.49%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 36.503 D 23.387 56.08% RSI 35.260 OK! RSI DOWN
+Stoch RSI Previous: K 29.204 D 23.815 22.63% RSI 74.249 OK!
+OBV...............: 33478924.00 DECRESCENTE Previous 36273049.38
+RSI Short/Long....: 58.420/64.070 -8.82% Previous 69.000/69.950 -1.36%
+EMA S/L...........: 215.389/213.775 -0.75% OK! Previous 215.028/212.788 -1.04%
+Actual Price 219.42 Change Trailing Stop Loss Price to 217.23 0.583% 
+P/L..........: 0.48%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 36.214 D 33.877 6.90% RSI 0.000 OK! RSI DOWN
+Stoch RSI Previous: K 36.214 D 23.290 55.49% RSI 34.393 OK!
+OBV...............: 31586207.90 DECRESCENTE Previous 32067569.04
+RSI Short/Long....: 49.560/59.220 -16.31% Previous 58.280/63.990 -8.92%
+EMA S/L...........: 214.505/213.721 -0.37% OK! Previous 215.369/213.762 -0.75%
+Actual Price 235.26 Change Trailing Stop Loss Price to 232.91 8.910% 
+P/L..........: 9.90%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.781 D 24.371 63.23% RSI 19.342 OK! RSI DOWN
+Stoch RSI Previous: K 33.333 D 11.111 200.00% RSI 100.000 OK!
+OBV...............: 34911503.98 DECRESCENTE Previous 36262504.76
+RSI Short/Long....: 39.420/45.010 -12.42% Previous 53.560/53.690 -0.24%
+EMA S/L...........: 237.686/239.105 0.60% !OK Previous 239.542/240.742 0.50%
+Actual Price 243.04 Change Trailing Stop Loss Price to 240.61 1.925% 
+P/L..........: 1.82%
 
 
 BUY INDICATORS:
-Stoch RSI K D RSI.: K 58.083 D 30.580 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 29.204 D 23.815 RSI 74.249 OK!
-OBV...............: 38167959.26 CRESCENTE Previous 36273049.38
-RSI Short/Long....: 71.700/71.330 Previous 69.000/69.950
-EMA S/L...........: 217.449/215.149 OK! Previous 215.028/212.788
-P/L..........: -1.38%
+Stoch RSI K D RSI.: K 38.906 D 19.877 95.74% RSI 54.545 OK! RSI DOWN
+Stoch RSI Previous: K 20.725 D 16.494 25.65% RSI 62.174 OK!
+OBV...............: 30213159.38 DECRESCENTE Previous 32793092.78
+RSI Short/Long....: 39.900/41.690 -4.29% Previous 48.790/46.510 4.90%
+EMA S/L...........: 231.805/233.082 0.55% !OK Previous 232.899/234.268 0.59%
+Actual Price 235.07 Change Trailing Stop Loss Price to 232.72 0.770% 
+P/L..........: -1.52%
 
 BUY INDICATORS:
-Stoch RSI K D RSI.: K 58.083 D 30.580 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 29.204 D 23.815 RSI 74.249 OK!
-OBV...............: 38465528.04 CRESCENTE Previous 36273049.38
-RSI Short/Long....: 71.240/71.090 Previous 69.000/69.950
-EMA S/L...........: 217.319/215.062 OK! Previous 215.028/212.788
+Stoch RSI K D RSI.: K 32.380 D 17.701 82.92% RSI 34.965 OK! RSI DOWN
+Stoch RSI Previous: K 20.725 D 16.494 25.65% RSI 62.174 OK!
+OBV...............: 29059971.61 DECRESCENTE Previous 32793092.78
+RSI Short/Long....: 36.860/39.830 -7.46% Previous 48.790/46.510 4.90%
+EMA S/L...........: 231.080/232.598 0.66% !OK Previous 232.899/234.268 0.59%
+Actual Price 236.2 Change Trailing Stop Loss Price to 233.84 1.895% 
+P/L..........: 1.79%
+
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.994 D 20.240 97.60% RSI 57.809 OK! RSI DOWN
+Stoch RSI Previous: K 20.725 D 16.494 25.65% RSI 62.174 OK!
+OBV...............: 28425513.03 DECRESCENTE Previous 32793092.78
+RSI Short/Long....: 40.470/42.030 -3.71% Previous 48.790/46.510 4.90%
+EMA S/L...........: 231.930/233.165 0.53% !OK Previous 232.899/234.268 0.59%
+Actual Price 234.25 Change Trailing Stop Loss Price to 231.91 0.310%
+P/L..........: -1.43% 
+
+
+BUY INDICATORS: (PESSIMA ENTRADA)
+Stoch RSI K D RSI.: K 30.981 D 17.235 79.75% RSI 30.769 OK! RSI DOWN
+Stoch RSI Previous: K 20.725 D 16.494 25.65% RSI 62.174 OK!
+OBV...............: 27845690.72 DECRESCENTE Previous 32793092.78
+RSI Short/Long....: 36.240/39.430 -8.09% Previous 48.790/46.510 4.90%
+EMA S/L...........: 230.915/232.488 0.68% !OK Previous 232.899/234.268 0.59%
+P/L..........: -2.10%
+
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 31.913 D 28.184 13.23% RSI 0.000 OK! RSI DOWN
+Stoch RSI Previous: K 31.913 D 17.546 81.88% RSI 33.566 OK!
+OBV...............: 27580987.73 DECRESCENTE Previous 27824462.79
+RSI Short/Long....: 25.440/32.630 -22.03% Previous 36.650/39.690 -7.66%
+EMA S/L...........: 227.272/229.548 1.00% !OK Previous 231.025/232.562 0.67%
+Actual Price 235.04 Change Trailing Stop Loss Price to 232.69 3.998% 
+P/L..........: 3.89%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.165 D 30.601 27.99% RSI 21.754 OK! RSI DOWN
+Stoch RSI Previous: K 31.913 D 17.546 81.88% RSI 33.566 OK!
+OBV...............: 33707314.24 CRESCENTE Previous 27824462.79
+RSI Short/Long....: 41.760/42.180 -1.00% Previous 36.650/39.690 -7.66%
+EMA S/L...........: 230.647/231.798 0.50% !OK Previous 231.025/232.562 0.67%
+Actual Price 234.61 Change Trailing Stop Loss Price to 232.26 0.765% 
+P/L..........: 0.66%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 31.913 D 28.184 13.23% RSI 0.000 OK! RSI DOWN
+Stoch RSI Previous: K 31.913 D 17.546 81.88% RSI 33.566 OK!
+OBV...............: 21246369.69 DECRESCENTE Previous 27824462.79
+RSI Short/Long....: 32.220/37.180 -13.34% Previous 36.650/39.690 -7.66%
+EMA S/L...........: 229.207/230.838 0.71% !OK Previous 231.025/232.562 0.67%
+Actual Price 240.53 Change Trailing Stop Loss Price to 238.12 4.616%
+P/L..........: 4.51% 
+
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.228 D 27.242 44.00% RSI 3.939 OK! RSI DOWN
+Stoch RSI Previous: K 37.916 D 14.166 167.65% RSI 100.000 OK!
+OBV...............: 15634728.15 DECRESCENTE Previous 18215457.87
+RSI Short/Long....: 35.760/39.810 -10.17% Previous 58.070/51.750 12.21%
+EMA S/L...........: 232.142/233.879 0.75% !OK Previous 234.733/236.043 0.56%
+Actual Price 234.13 Change Trailing Stop Loss Price to 231.79 0.874%
+P/L..........: -1.31% 
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.859 D 27.364 45.66% RSI 19.576 OK! RSI DOWN
+Stoch RSI Previous: K 33.333 D 28.155 18.39% RSI 100.000 OK!
+OBV...............: 16611299.36 DECRESCENTE Previous 17990638.15
+RSI Short/Long....: 28.080/30.250 -7.17% Previous 45.270/40.460 11.89%
+EMA S/L...........: 208.696/213.126 2.12% !OK Previous 214.803/218.395 1.67%
+Actual Price 205.34 Change Trailing Stop Loss Price to 203.29 0.244% 
+P/L..........: 1.15%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.963 D 24.432 63.57% RSI 19.888 OK! RSI DOWN
+Stoch RSI Previous: K 33.333 D 22.222 50.00% RSI 100.000 OK!
+OBV...............: 6410565.52 DECRESCENTE Previous 7607007.86
+RSI Short/Long....: 33.800/36.100 -6.37% Previous 61.810/48.760 26.76%
+EMA S/L...........: 195.750/196.465 0.37% !OK Previous 197.699/197.797 0.05%
+P/L..........: -0.08%
+
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.421 D 26.545 48.51% RSI 42.246 OK! RSI DOWN
+Stoch RSI Previous: K 32.776 D 18.975 72.73% RSI 76.016 OK!
+OBV...............: -8403843.88 DECRESCENTE Previous -8193180.13
+RSI Short/Long....: 16.890/17.730 -4.74% Previous 21.620/20.100 7.56%
+EMA S/L...........: 137.067/141.496 3.23% !OK Previous 140.194/145.274 3.62%
+P/L..........: -1.97%
+
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 31.043 D 23.752 30.70% RSI 17.112 OK! RSI DOWN
+Stoch RSI Previous: K 32.776 D 18.975 72.73% RSI 76.016 OK!
+OBV...............: -8809510.80 DECRESCENTE Previous -8193180.13
+RSI Short/Long....: 15.340/16.810 -8.74% Previous 21.620/20.100 7.56%
+EMA S/L...........: 136.202/140.919 3.46% !OK Previous 140.194/145.274 3.62%
+P/L..........: -1.48%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 30.865 D 23.693 30.27% RSI 16.578 OK! RSI DOWN
+Stoch RSI Previous: K 32.776 D 18.975 72.73% RSI 76.016 OK!
+OBV...............: -9121717.72 DECRESCENTE Previous -8193180.13
+RSI Short/Long....: 15.320/16.790 -8.76% Previous 21.620/20.100 7.56%
+EMA S/L...........: 136.187/140.909 3.47% !OK Previous 140.194/145.274 3.62%
+P/L..........: -1.52%
+
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 31.043 D 23.752 30.70% RSI 17.112 OK! RSI DOWN
+Stoch RSI Previous: K 32.776 D 18.975 72.73% RSI 76.016 OK!
+OBV...............: -12642645.96 DECRESCENTE Previous -8193180.13
+RSI Short/Long....: 15.340/16.800 -8.69% Previous 21.620/20.100 7.56%
+EMA S/L...........: 136.197/140.916 3.46% !OK Previous 140.194/145.274 3.62%
+P/L..........: -1.36%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 30.152 D 23.455 28.55% RSI 14.439 OK! RSI DOWN
+Stoch RSI Previous: K 32.776 D 18.975 72.73% RSI 76.016 OK!
+OBV...............: -13275523.51 DECRESCENTE Previous -8193180.13
+RSI Short/Long....: 15.190/16.710 -9.10% Previous 21.620/20.100 7.56%
+EMA S/L...........: 136.107/140.856 3.49% !OK Previous 140.194/145.274 3.62%
+Actual Price 134.13 Change Trailing Stop Loss Price to 132.79 0.482% 
+P/L..........: 1.40%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.777 D 26.664 49.18% RSI 43.316 OK! RSI DOWN
+Stoch RSI Previous: K 32.776 D 18.975 72.73% RSI 76.016 OK!
+OBV...............: -13434764.99 DECRESCENTE Previous -8193180.13
+RSI Short/Long....: 16.950/17.760 -4.56% Previous 21.620/20.100 7.56%
+EMA S/L...........: 137.097/141.516 3.22% !OK Previous 140.194/145.274 3.62%
+Actual Price 139.38 Change Trailing Stop Loss Price to 137.99 2.872% 
+P/L..........: 2.77%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.232 D 15.840 147.67% RSI 100.000 OK! RSI_UP
+Stoch RSI Previous: K 5.899 D 4.793 23.06% RSI 10.526 OK!
+OBV...............: 7485085.10 CRESCENTE Previous 7450979.97
+RSI Short/Long....: 22.320/31.910 -30.05% Previous 18.410/30.640 -39.92%
+EMA S/L...........: 125.293/126.713 1.13% !OK Previous 125.796/127.675 1.49%
+Actual Price 129.85 Change Trailing Stop Loss Price to 128.55 2.911% 
+P/L..........: 2.81%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.232 D 15.840 147.67% RSI 100.000 OK! RSI_UP
+Stoch RSI Previous: K 5.899 D 4.793 23.06% RSI 10.526 OK!
+OBV...............: 8579604.27 CRESCENTE Previous 7450979.97
+RSI Short/Long....: 55.130/46.820 17.75% Previous 18.410/30.640 -39.92%
+EMA S/L...........: 127.198/127.983 0.62% !OK Previous 125.796/127.675 1.49%
+P/L..........: -2.10%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.232 D 15.840 147.67% RSI 100.000 OK! RSI_UP
+Stoch RSI Previous: K 5.899 D 4.793 23.06% RSI 10.526 OK!
+OBV...............: 9296217.49 CRESCENTE Previous 7450979.97
+RSI Short/Long....: 35.350/36.790 -3.91% Previous 18.410/30.640 -39.92%
+EMA S/L...........: 125.818/127.063 0.99% !OK Previous 125.796/127.675 1.49%
+Actual Price 130 Change Trailing Stop Loss Price to 128.70 2.171% 
+P/L..........: 2.07%
+
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.232 D 15.840 147.67% RSI 100.000 OK! RSI_UP
+Stoch RSI Previous: K 5.899 D 4.793 23.06% RSI 10.526 OK!
+OBV...............: 9993010.54 CRESCENTE Previous 7450979.97
+RSI Short/Long....: 55.080/46.790 17.72% Previous 18.410/30.640 -39.92%
+EMA S/L...........: 127.193/127.980 0.62% !OK Previous 125.796/127.675 1.49%
+P/L..........: -2.10%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.232 D 15.840 147.67% RSI 100.000 OK! RSI_UP
+Stoch RSI Previous: K 5.899 D 4.793 23.06% RSI 10.526 OK!
+OBV...............: 10561549.46 CRESCENTE Previous 7450979.97
+RSI Short/Long....: 35.550/36.880 -3.61% Previous 18.410/30.640 -39.92%
+EMA S/L...........: 125.828/127.070 0.99% !OK Previous 125.796/127.675 1.49%
 P/L..........: -1.37%
 
 BUY INDICATORS:
-Stoch RSI K D RSI.: K 60.590 D 42.002 RSI 73.128 OK! RSI_UP
-Stoch RSI Previous: K 36.214 D 23.290 RSI 34.393 OK!
-OBV...............: 32991019.73 CRESCENTE Previous 32067569.04
-RSI Short/Long....: 69.180/69.000 Previous 58.280/63.990
-EMA S/L...........: 217.620/215.798 OK! Previous 215.369/213.762
-Change Trailing Stop Loss Price to 230.50 4.730% 
-P/L..........: 5.33%
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 69.547 D 44.988 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 36.214 D 23.290 RSI 34.393 OK!
-OBV...............: 33941349.78 CRESCENTE Previous 32067569.04
-RSI Short/Long....: 83.200/78.540 Previous 58.280/63.990
-EMA S/L...........: 224.260/220.225 OK! Previous 215.369/213.762
-Change Trailing Stop Loss Price to 241.39 3.431% 
-P/L..........: 1.64%
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 66.667 D 33.333 RSI 100.000 OK! RSI DOWN
-Stoch RSI Previous: K 33.333 D 11.111 RSI 100.000 OK!
-OBV...............: 36384354.00 CRESCENTE Previous 36262504.76
-RSI Short/Long....: 59.320/56.970 Previous 53.560/53.690
-EMA S/L...........: 241.961/241.955 OK! Previous 239.542/240.742
-Active Trailing Stop Loss at 244.71 0.000%
-Change Trailing Stop Loss Price to 244.88 0.104% 
-Change Trailing Stop Loss Price to 245.24 0.252% 
-P/L..........: -1.22%
-
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 75.709 D 52.077 RSI 85.563 OK! RSI_UP
-Stoch RSI Previous: K 47.188 D 26.840 RSI 41.564 OK!
-OBV...............: 34784532.36 CRESCENTE Previous 33568051.97
-RSI Short/Long....: 58.970/55.880 Previous 42.660/47.200
-EMA S/L...........: 240.923/240.888 OK! Previous 238.566/239.691
-Change Trailing Stop Loss Price to 245.83 0.947% 
-P/L..........: -1.45%
-
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 75.357 D 51.959 RSI 84.507 OK! RSI_UP
-Stoch RSI Previous: K 47.188 D 26.840 RSI 41.564 OK!
-OBV...............: 36230790.92 CRESCENTE Previous 33568051.97
-RSI Short/Long....: 58.850/55.800 Previous 42.660/47.200
-EMA S/L...........: 240.893/240.868 OK! Previous 238.566/239.691
-Change Trailing Stop Loss Price to 244.35 0.364% 
-P/L..........: -1.18%
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 48.058 D 45.040 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 34.226 D 57.744 RSI 44.173 OK!
-OBV...............: 18678358.23 CRESCENTE Previous 18117517.21
-RSI Short/Long....: 73.810/73.460 Previous 68.580/70.730
-EMA S/L...........: 251.027/245.924 OK! Previous 246.864/241.291
-Change Trailing Stop Loss Price to 269.01 5.310%
-RSI STOCH K PREVIO TEM QUE SER MAIOR QUE 30 E NÃO PODE TER O STOCHRSI 100 PREVIO E ATUAL 
-P/L..........: 5.20%
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 65.247 D 39.295 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 31.913 D 17.546 RSI 33.566 OK!
-OBV...............: 28923382.42 CRESCENTE Previous 27824462.79
-RSI Short/Long....: 61.520/54.220 Previous 36.650/39.690
-EMA S/L...........: 234.217/234.178 OK! Previous 231.025/232.562
-Change Trailing Stop Loss Price to 244.64 2.942%
-P/L..........: -3.10%
-
-
-
-Stoch RSI K D RSI.: K 65.247 D 39.295 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 31.913 D 17.546 RSI 33.566 OK!
-OBV...............: 34769864.29 CRESCENTE Previous 27824462.79
-RSI Short/Long....: 61.880/54.490 Previous 36.650/39.690
-EMA S/L...........: 234.317/234.244 OK! Previous 231.025/232.562
-Stop Loss.........: 3.00%
-Stop Gain.........: 5.00%
-Stop Loss Price...: 230.48
-Stop Gain Price...: 249.49
-Change Trailing Stop Loss Price to 240.53 1.128% 
-P/L..........: -1.24%
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 66.667 D 44.444 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 33.333 D 33.091 RSI 0.000 OK!
-OBV...............: 23115336.76 CRESCENTE Previous 21008864.04
-RSI Short/Long....: 60.820/53.450 Previous 28.000/33.750
-EMA S/L...........: 222.854/222.841 OK! Previous 219.787/221.301
-Change Trailing Stop Loss Price to 227.47 0.585% 
-P/L..........: -3.10%
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 66.667 D 44.444 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 33.333 D 33.091 RSI 0.000 OK!
-OBV...............: 24459815.45 CRESCENTE Previous 21008864.04
-RSI Short/Long....: 60.870/53.490 Previous 28.000/33.750
-EMA S/L...........: 222.869/222.851 OK! Previous 219.787/221.301
-ctive Trailing Stop Loss at 227.10 0.000%
-Change Trailing Stop Loss Price to 228.75 1.138% 
-P/L..........: -1.60%
-
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 48.058 D 45.040 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 34.226 D 57.744 RSI 44.173 OK!
-OBV...............: 18678358.23 CRESCENTE Previous 18117517.21
-RSI Short/Long....: 73.810/73.460 Previous 68.580/70.730
-EMA S/L...........: 251.027/245.924 OK! Previous 246.864/241.291
-Change Trailing Stop Loss Price to 269.01 5.310%
-P/L..........: 5.20%
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 48.058 D 45.040 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 34.226 D 57.744 RSI 44.173 OK!
-OBV...............: 23034880.45 CRESCENTE Previous 18117517.21
-RSI Short/Long....: 81.860/78.730 Previous 68.580/70.730
-EMA S/L...........: 257.502/250.241 OK! Previous 246.864/241.291
-Change Trailing Stop Loss Price to 271.67 1.215% 
-P/L..........: -3.10%
-
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 48.058 D 45.040 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 34.226 D 57.744 RSI 44.173 OK!
-OBV...............: 24069869.42 CRESCENTE Previous 18117517.21
-RSI Short/Long....: 77.570/75.730 Previous 68.580/70.730
-EMA S/L...........: 253.472/247.554 OK! Previous 246.864/241.291
-Stop Loss.........: 3.00%
-Stop Gain.........: 5.00%
-Stop Loss Price...: 252.28
-Stop Gain Price...: 273.08
-P/L..........: -1.26%
-
-
-UY INDICATORS:
-Stoch RSI K D RSI.: K 58.190 D 51.435 RSI 74.569 OK! RSI_UP
-Stoch RSI Previous: K 48.058 D 43.447 RSI 0.000 OK!
-OBV...............: 18625260.94 CRESCENTE Previous 17539495.80
-RSI Short/Long....: 72.470/72.150 Previous 62.840/67.880
-EMA S/L...........: 255.791/252.191 OK! Previous 252.611/248.802
-Stop Loss.........: 3.00%
-Stop Gain.........: 5.00%
-Stop Loss Price...: 251.20
-Stop Gain Price...: 271.92
-Change Trailing Stop Loss Price to 268.13 3.435%
-P/L..........: -1.17%
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 33.333 D 22.222 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 0.000 D 33.333 RSI 0.000 OK!
-OBV...............: 4768011.78 CRESCENTE Previous 3877017.25
-RSI Short/Long....: 63.940/50.260 Previous 22.370/30.940
-EMA S/L...........: 197.999/197.997 OK! Previous 196.008/197.001
-Change Trailing Stop Loss Price to 205.12 2.463%
-P/L..........: -1.26%
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 43.183 D 31.975 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 9.849 D 39.803 RSI 0.870 OK!
-OBV...............: 3183173.31 CRESCENTE Previous 1250826.00
-RSI Short/Long....: 59.840/51.920 Previous 35.610/39.790
-EMA S/L...........: 128.733/128.678 OK! Previous 126.996/127.782
-Change Trailing Stop Loss Price to 135.90 4.058% 
-P/L..........: 3.46%
-
-
-Stoch RSI K D RSI.: K 58.505 D 49.832 RSI 32.958 OK! RSI DOWN
-Stoch RSI Previous: K 47.809 D 33.614 RSI 42.557 OK!
-OBV...............: 4741025.25 CRESCENTE Previous 2828977.34
-RSI Short/Long....: 50.300/48.990 Previous 43.280/45.230
-EMA S/L...........: 129.436/129.429 OK! Previous 129.381/129.399
-P/L..........: -1.25%
-
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 58.505 D 49.832 RSI 32.958 OK! RSI DOWN
-Stoch RSI Previous: K 47.809 D 33.614 RSI 42.557 OK!
-OBV...............: 5052231.76 CRESCENTE Previous 2828977.34
-RSI Short/Long....: 50.300/48.990 Previous 43.280/45.230
-EMA S/L...........: 129.436/129.429 OK! Previous 129.381/129.399
-P/L..........: -1.17%
-
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 52.683 D 51.058 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 52.683 D 47.892 RSI 15.493 OK!
-OBV...............: 5629030.16 CRESCENTE Previous 5229725.95
-RSI Short/Long....: 52.390/49.700 Previous 46.780/47.040
-EMA S/L...........: 129.265/129.262 OK! Previous 128.931/129.092
-Change Trailing Stop Loss Price to 131.82 1.611% 
-P/L..........: -1.15%
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 71.831 D 59.066 RSI 100.000 OK! RSI DOWN
-Stoch RSI Previous: K 52.683 D 51.058 RSI 100.000 OK!
-OBV...............: 6824258.60 CRESCENTE Previous 6728426.84
-RSI Short/Long....: 53.910/49.950 Previous 46.950/47.120
-Change Trailing Stop Loss Price to 134.03 3.419% 
-P/L..........: 2.14%
-
-UY INDICATORS:
-Stoch RSI K D RSI.: K 44.871 D 27.951 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 11.537 D 31.804 RSI 21.569 OK!
-OBV...............: 11784997.47 CRESCENTE Previous 4640158.98
-RSI Short/Long....: 69.860/56.820 Previous 17.000/21.290
-EMA S/L...........: 113.499/113.473 OK! Previous 107.778/110.600
-Change Trailing Stop Loss Price to 120.54 1.006% 
-P/L..........: -1.10%
-
-
-UY INDICATORS:
-Stoch RSI K D RSI.: K 84.140 D 83.063 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 74.594 D 85.168 RSI 52.419 OK!
-OBV...............: 20078921.57 CRESCENTE Previous 19945967.73
-RSI Short/Long....: 78.110/73.380 Previous 68.160/68.180
-EMA S/L...........: 139.032/137.250 OK! Previous 137.154/135.421
-Change Trailing Stop Loss Price to 142.78 1.226% 
-P/L..........: -2.37%
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 33.333 D 22.222 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 0.000 D 33.333 RSI 0.000 OK!
-OBV...............: 22171985.77 CRESCENTE Previous 21115647.12
-RSI Short/Long....: 71.310/71.260 Previous 46.210/61.700
-EMA S/L...........: 150.252/149.411 OK! Previous 148.864/148.297
-Change Trailing Stop Loss Price to 153.37 1.040% 
-P/L..........: -2.70%
-
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 33.333 D 11.111 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 0.000 D 11.111 RSI 0.000 OK!
-OBV...............: 19547104.40 CRESCENTE Previous 17606840.15
-RSI Short/Long....: 68.770/68.710 Previous 44.710/60.930
-EMA S/L...........: 149.206/148.783 OK! Previous 148.352/148.145
-P/L..........: -1.80%
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 52.536 D 23.913 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 19.203 D 6.401 RSI 57.609 OK!
-OBV...............: 17984944.70 CRESCENTE Previous 17888552.17
-RSI Short/Long....: 62.890/62.810 Previous 50.080/58.160
-EMA S/L...........: 147.968/147.857 OK! Previous 147.436/147.535
-Change Trailing Stop Loss Price to 153.84 3.492% 
+Stoch RSI K D RSI.: K 37.199 D 27.443 35.55% RSI 1.070 OK! RSI DOWN
+Stoch RSI Previous: K 39.232 D 15.840 147.67% RSI 100.000 OK!
+OBV...............: 10519487.64 DECRESCENTE Previous 11005343.19
+RSI Short/Long....: 26.880/32.730 -17.87% Previous 42.910/40.180 6.79%
+EMA S/L...........: 125.042/126.177 0.91% !OK Previous 126.233/127.340 0.88%
 P/L..........: 1.21%
 
 BUY INDICATORS:
-Stoch RSI K D RSI.: K 33.333 D 11.111 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 0.000 D 11.111 RSI 0.000 OK!
-OBV...............: 34725962.66 CRESCENTE Previous 33658632.58
-RSI Short/Long....: 63.570/59.810 Previous 26.880/42.310
-EMA S/L...........: 170.954/170.934 OK! Previous 168.159/169.526
-Change Trailing Stop Loss Price to 176.76 1.631%
-P/L..........: -3.10%
+Stoch RSI K D RSI.: K 39.872 D 28.334 40.72% RSI 9.091 OK! RSI DOWN
+Stoch RSI Previous: K 39.232 D 15.840 147.67% RSI 100.000 OK!
+OBV...............: 6100802.94 DECRESCENTE Previous 11005343.19
+RSI Short/Long....: 27.760/33.250 -16.51% Previous 42.910/40.180 6.79%
+EMA S/L...........: 125.162/126.257 0.87% !OK Previous 126.233/127.340 0.88%
+P/L..........: -2.10%
 
 BUY INDICATORS:
-Stoch RSI K D RSI.: K 33.333 D 11.111 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 0.000 D 11.111 RSI 0.000 OK!
-OBV...............: 36826437.41 CRESCENTE Previous 33658632.58
-RSI Short/Long....: 63.360/59.670 Previous 26.880/42.310
-EMA S/L...........: 170.909/170.904 OK! Previous 168.159/169.526
-Change Trailing Stop Loss Price to 174.09 0.147%
-P/L..........: -1.23%
+Stoch RSI K D RSI.: K 36.842 D 27.324 34.83% RSI 0.000 OK! RSI DOWN
+Stoch RSI Previous: K 39.232 D 15.840 147.67% RSI 100.000 OK!
+OBV...............: 5878136.11 DECRESCENTE Previous 11005343.19
+RSI Short/Long....: 20.580/28.410 -27.56% Previous 42.910/40.180 6.79%
+EMA S/L...........: 123.887/125.407 1.23% !OK Previous 126.233/127.340 0.88%
+P/L..........: -2.10%
 
 BUY INDICATORS:
-Stoch RSI K D RSI.: K 51.650 D 39.439 RSI 54.950 OK! RSI_UP
-Stoch RSI Previous: K 33.333 D 22.222 RSI 0.000 OK!
-OBV...............: 33284016.13 CRESCENTE Previous 32782609.40
-RSI Short/Long....: 57.470/55.320 Previous 38.120/44.830
-EMA S/L...........: 170.332/170.274 OK! Previous 168.795/169.476
-P/L..........: -3.34%
+Stoch RSI K D RSI.: K 36.842 D 27.324 34.83% RSI 0.000 OK! RSI DOWN
+Stoch RSI Previous: K 39.232 D 15.840 147.67% RSI 100.000 OK!
+OBV...............: 5462485.34 DECRESCENTE Previous 11005343.19
+RSI Short/Long....: 17.050/25.450 -33.01% Previous 42.910/40.180 6.79%
+EMA S/L...........: 122.867/124.727 1.51% !OK Previous 126.233/127.340 0.88%
+P/L..........: -2.10%
 
 BUY INDICATORS:
-Stoch RSI K D RSI.: K 39.989 D 37.770 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 39.989 D 35.552 RSI 19.967 OK!
-OBV...............: 36463565.34 CRESCENTE Previous 35918551.04
-RSI Short/Long....: 57.530/54.400 Previous 46.520/48.970
-EMA S/L...........: 169.741/169.717 OK! Previous 168.692/169.181
-Change Trailing Stop Loss Price to 171.76 0.467%
-P/L..........: -1.51%
+Stoch RSI K D RSI.: K 39.355 D 22.304 76.45% RSI 35.395 OK! RSI DOWN
+Stoch RSI Previous: K 27.557 D 20.297 35.77% RSI 82.670 OK!
+OBV...............: 17542545.90 DECRESCENTE Previous 17728494.34
+RSI Short/Long....: 39.550/44.000 -10.11% Previous 51.100/50.590 1.01%
+EMA S/L...........: 145.785/146.179 0.27% !OK Previous 146.261/146.614 0.24%
+P/L..........: -1.39%
 
 BUY INDICATORS:
-Stoch RSI K D RSI.: K 39.989 D 37.770 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 39.989 D 35.552 RSI 19.967 OK!
-OBV...............: 37669754.46 CRESCENTE Previous 35918551.04
-RSI Short/Long....: 57.160/54.200 Previous 46.520/48.970
-EMA S/L...........: 169.696/169.687 OK! Previous 168.692/169.181
-Change Trailing Stop Loss Price to 174.81 2.305%
-P/L..........: -1.62%
+Stoch RSI K D RSI.: K 32.597 D 20.051 62.57% RSI 15.120 OK! RSI DOWN
+Stoch RSI Previous: K 27.557 D 20.297 35.77% RSI 82.670 OK!
+OBV...............: 16019252.72 DECRESCENTE Previous 17728494.34
+RSI Short/Long....: 36.770/42.170 -12.81% Previous 51.100/50.590 1.01%
+EMA S/L...........: 145.550/146.022 0.32% !OK Previous 146.261/146.614 0.24%
+Actual Price 149.47 Change Trailing Stop Loss Price to 147.98 2.063% 
+P/L..........: 1.96%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 38.934 D 24.089 61.62% RSI 16.802 OK! RSI DOWN
+Stoch RSI Previous: K 33.333 D 11.111 200.00% RSI 100.000 OK!
+OBV...............: 36635961.32 DECRESCENTE Previous 36859655.29
+RSI Short/Long....: 44.040/48.900 -9.94% Previous 62.490/59.100 5.74%
+EMA S/L...........: 169.905/170.216 0.18% !OK Previous 170.729/170.784 0.03%
+P/L..........: -2.10%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 33.333 D 22.222 50.00% RSI 0.000 OK! RSI DOWN
+Stoch RSI Previous: K 33.333 D 11.111 200.00% RSI 100.000 OK!
+OBV...............: 36132600.82 DECRESCENTE Previous 36859655.29
+RSI Short/Long....: 36.630/43.730 -16.24% Previous 62.490/59.100 5.74%
+EMA S/L...........: 168.460/169.253 0.47% !OK Previous 170.729/170.784 0.03%
+P/L..........: -2.10%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 33.333 D 22.222 50.00% RSI 0.000 OK! RSI DOWN
+Stoch RSI Previous: K 33.333 D 11.111 200.00% RSI 100.000 OK!
+OBV...............: 35672018.97 DECRESCENTE Previous 36859655.29
+RSI Short/Long....: 30.870/39.130 -21.11% Previous 62.490/59.100 5.74%
+EMA S/L...........: 166.855/168.183 0.80% !OK Previous 170.729/170.784 0.03%
+P/L..........: -2.10%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 33.333 D 22.222 50.00% RSI 0.000 OK! RSI DOWN
+Stoch RSI Previous: K 33.333 D 11.111 200.00% RSI 100.000 OK!
+OBV...............: 35198472.06 DECRESCENTE Previous 36859655.29
+RSI Short/Long....: 26.490/35.250 -24.85% Previous 62.490/59.100 5.74%
+EMA S/L...........: 165.170/167.059 1.14% !OK Previous 170.729/170.784 0.03%
+Actual Price 163.53 Change Trailing Stop Loss Price to 161.89 1.330% 
+P/L..........: 1.23%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 33.333 D 22.222 50.00% RSI 0.000 OK! RSI DOWN
+Stoch RSI Previous: K 33.333 D 11.111 200.00% RSI 100.000 OK!
+OBV...............: 34055364.90 DECRESCENTE Previous 36859655.29
+RSI Short/Long....: 29.300/37.790 -22.47% Previous 62.490/59.100 5.74%
+EMA S/L...........: 166.310/167.819 0.91% !OK Previous 170.729/170.784 0.03%
+Actual Price 167.28 Change Trailing Stop Loss Price to 165.61 2.194% 
+P/L..........: 2.09%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 33.333 D 22.222 50.00% RSI 0.000 OK! RSI DOWN
+Stoch RSI Previous: K 33.333 D 11.111 200.00% RSI 100.000 OK!
+OBV...............: 33517047.55 DECRESCENTE Previous 36859655.29
+RSI Short/Long....: 34.370/41.990 -18.15% Previous 62.490/59.100 5.74%
+EMA S/L...........: 167.895/168.876 0.58% !OK Previous 170.729/170.784 0.03%
+Actual Price 169.4 Change Trailing Stop Loss Price to 167.71 1.502% 
+P/L..........: 1.40%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 37.785 D 37.036 2.02% RSI 93.388 OK! RSI_UP
+Stoch RSI Previous: K 39.989 D 35.552 12.48% RSI 19.967 OK!
+OBV...............: 35915856.29 DECRESCENTE Previous 35918551.04
+RSI Short/Long....: 46.090/48.750 -5.46% Previous 46.520/48.970 -5.00%
+EMA S/L...........: 168.601/168.957 0.21% !OK Previous 168.692/169.181 0.29%
+Actual Price 173.61 Change Trailing Stop Loss Price to 171.87 1.894% 
+P/L..........: 1.79%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.989 D 37.770 5.87% RSI 100.000 OK! RSI_UP
+Stoch RSI Previous: K 39.989 D 35.552 12.48% RSI 19.967 OK!
+OBV...............: 38157421.61 CRESCENTE Previous 35918551.04
+RSI Short/Long....: 60.450/56.080 7.79% Previous 46.520/48.970 -5.00%
+EMA S/L...........: 170.136/169.980 -0.09% OK! Previous 168.692/169.181 0.29%
+Actual Price 174.81 Change Trailing Stop Loss Price to 173.06 0.763% 
+P/L..........: 0.66%
+
+BUY INDICATORS:
+Stoch RSI K D RSI.: K 39.989 D 37.770 5.87% RSI 100.000 OK! RSI_UP
+Stoch RSI Previous: K 39.989 D 35.552 12.48% RSI 19.967 OK!
+OBV...............: 38676197.82 CRESCENTE Previous 35918551.04
+RSI Short/Long....: 48.930/50.050 -2.24% Previous 46.520/48.970 -5.00%
+EMA S/L...........: 168.841/169.117 0.16% !OK Previous 168.692/169.181 0.29%
+P/L..........: -1.32%
 
 
 BUY INDICATORS:
-Stoch RSI K D RSI.: K 39.989 D 37.770 RSI 100.000 OK! RSI_UP
-Stoch RSI Previous: K 39.989 D 35.552 RSI 19.967 OK!
-OBV...............: 39577151.49 CRESCENTE Previous 35918551.04
-RSI Short/Long....: 57.290/54.270 Previous 46.520/48.970
-EMA S/L...........: 169.711/169.697 OK! Previous 168.692/169.181
-Change Trailing Stop Loss Price to 175.45 2.662% 
-P/L..........: 1.33%
-
-
-
+Stoch RSI K D RSI.: K 39.989 D 37.770 5.87% RSI 100.000 OK! RSI_UP
+Stoch RSI Previous: K 39.989 D 35.552 12.48% RSI 19.967 OK!
+OBV...............: 39386943.37 CRESCENTE Previous 35918551.04
+RSI Short/Long....: 48.170/49.700 -3.08% Previous 46.520/48.970 -5.00%
+EMA S/L...........: 168.776/169.074 0.18% !OK Previous 168.692/169.181 0.29%
+Actual Price 175.45 Change Trailing Stop Loss Price to 173.70 2.761% 
+P/L..........: 2.66%
 
 BUY INDICATORS:
-Stoch RSI K D RSI.: K 62.790 D 46.880 RSI 76.923 OK! RSI DOWN
-Stoch RSI Previous: K 37.149 D 48.172 RSI 89.344 OK!
-OBV...............: 37607968.06 CRESCENTE Previous 37600879.15
-RSI Short/Long....: 58.640/58.040 Previous 57.600/57.640
-EMA S/L...........: 175.697/175.222 OK! Previous 175.513/174.892
-Change Trailing Stop Loss Price to 177.95 1.074% 
-P/L..........: -1.27%
-
-
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 60.225 D 46.025 RSI 69.231 OK! RSI DOWN
-Stoch RSI Previous: K 37.149 D 48.172 RSI 89.344 OK!
-OBV...............: 39745098.82 CRESCENTE Previous 37600879.15
-RSI Short/Long....: 58.490/57.990 Previous 57.600/57.640
-EMA S/L...........: 175.687/175.215 OK! Previous 175.513/174.892
-P/L..........: -1.16%
-
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 49.781 D 41.360 RSI 60.000 OK! RSI_UP
-Stoch RSI Previous: K 37.149 D 38.333 RSI 0.000 OK!
-OBV...............: 35402189.26 CRESCENTE Previous 35385505.12
-RSI Short/Long....: 56.980/56.900 Previous 50.140/54.490
-EMA S/L...........: 175.401/175.129 OK! Previous 175.212/174.898
-P/L..........: -1.14%
-
-BUY INDICATORS:
-Stoch RSI K D RSI.: K 49.781 D 41.360 RSI 60.000 OK! RSI_UP
-Stoch RSI Previous: K 37.149 D 38.333 RSI 0.000 OK!
-OBV...............: 36113396.06 CRESCENTE Previous 35385505.12
-RSI Short/Long....: 56.980/56.900 Previous 50.140/54.490
-EMA S/L...........: 175.401/175.129 OK! Previous 175.212/174.898
-Change Trailing Stop Loss Price to 177.49 0.979%
-P/L..........: -1.10%
+Stoch RSI K D RSI.: K 39.989 D 37.770 5.87% RSI 100.000 OK! RSI_UP
+Stoch RSI Previous: K 39.989 D 35.552 12.48% RSI 19.967 OK!
+OBV...............: 40317445.29 CRESCENTE Previous 35918551.04
+RSI Short/Long....: 65.700/59.410 10.59% Previous 46.520/48.970 -5.00%
+EMA S/L...........: 171.016/170.567 -0.26% OK! Previous 168.692/169.181 0.29%
+Actual Price 177.66 Change Trailing Stop Loss Price to 175.88 1.366% 
+P/L..........: 1.26%
