@@ -16,6 +16,7 @@ abstract class Bot {
     protected telegram: ChatManager | undefined;
     protected status: Status;
     protected checkInterval: number = 10; // Default to 10 seconds
+    public backTest = false;
 
     /**
      * Abstract class for trading bots.
@@ -53,16 +54,26 @@ abstract class Bot {
 
     protected abstract getBotConfig(): string;
 
-    private escapeHtml(text: string): string {
+    // Torna escapeHtml protected para uso nas subclasses
+    protected escapeHtml(text: string): string {
         return he.encode(text);
     }
 
+    protected log(message: string): void {
+        if (!this.backTest)
+            console.log(`${message}`);
+    }
+
     protected async sendMessage(message: string): Promise<void> {
+        if (this.chatId == 999999) {
+            console.log(`${message}`);
+            return;
+        }
         if (!this.telegram) {
             this.telegram = await ChatManager.getInstance();
         }
         if (this.telegram) {
-            const safeMessage = `<code>${this.escapeHtml(message)}</code>`;
+            const safeMessage = `<pre>${this.escapeHtml(message)}</pre>`;
             await this.telegram.sendFormattedMessage(this.chatId, safeMessage);
         } else {
             console.error('Telegram instance is not initialized.');

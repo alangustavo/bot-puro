@@ -101,3 +101,47 @@ export function createEvent(data: EventData): AggTradeEvent | KlineEvent | null 
     console.warn('Unknown event type:', data);
     return event; // Retorna null se o tipo de evento não for reconhecido
 }
+
+/**
+ * Cria um KlineEvent de 1h a partir de um buffer de candles de 1m.
+ * @param buffer1m Array de candles de 1 minuto (com as propriedades openTime, open, high, low, close, volume, closeTime, etc)
+ * @param symbol   Símbolo do ativo
+ * @param x        Booleano indicando se o kline está fechado (true se completou 60 minutos)
+ * @returns        KlineEvent simulando o kline de 1h
+ */
+export function createKlineEventFrom1mBuffer(buffer1m: any[], symbol: string, x: boolean): KlineEvent {
+    if (buffer1m.length === 0) throw new Error('Buffer vazio');
+    const openTime = buffer1m[0].openTime;
+    const closeTime = buffer1m[buffer1m.length - 1].closeTime;
+    const open = buffer1m[0].open;
+    const close = buffer1m[buffer1m.length - 1].close;
+    const high = Math.max(...buffer1m.map(c => c.high));
+    const low = Math.min(...buffer1m.map(c => c.low));
+    const volume = buffer1m.reduce((sum, c) => sum + c.volume, 0);
+    const n = buffer1m.reduce((sum, c) => sum + (c.trades ?? 0), 0);
+    // Os campos abaixo podem ser ajustados conforme necessidade
+    return {
+        e: 'kline',
+        E: closeTime,
+        s: symbol,
+        k: {
+            t: openTime,
+            T: closeTime,
+            s: symbol,
+            i: '1h',
+            f: 0,
+            L: 0,
+            o: open.toString(),
+            c: close.toString(),
+            h: high.toString(),
+            l: low.toString(),
+            v: volume.toString(),
+            n,
+            x,
+            q: '0',
+            V: '0',
+            Q: '0',
+            B: '0',
+        }
+    };
+}

@@ -75,6 +75,14 @@ export default class Klines {
         return this.klines.map(kline => kline.volume);
     }
 
+    public getStartTimes(): number[] {
+        return this.klines.map(kline => kline.startTime);
+    }
+
+    public getEndTimes(): number[] {
+        return this.klines.map(kline => kline.closeTime);
+    }
+
     public getOhlcv(): OHLCV[] {
         return this.klines.map(kline => ({
             o: kline.open,
@@ -95,5 +103,12 @@ export default class Klines {
             volume: kline.volume
         }));
 
+    }
+
+    public getLastKline(): Kline | null {
+        if (this.klines.length === 0) {
+            return null;
+        }
+        return this.klines[this.klines.length - 1];
     }
 }

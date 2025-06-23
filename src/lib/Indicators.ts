@@ -1,6 +1,6 @@
 import DataManager from "./DataManager";
 import type { Interval, KlineData } from "./types";
-import { RSI, SMA, EMA } from 'technicalindicators';
+import { RSI, SMA, EMA, OBV, StochasticRSI } from 'technicalindicators';
 
 export default class Indicators {
 
@@ -293,7 +293,7 @@ export default class Indicators {
         const klines = DataManager.getInstance().getKlines(symbol, interval);
         if (!klines) throw new Error(`Klines not found for ${symbol} with interval ${interval}`);
         const closes = klines.getClosePrices();
-        if (closes.length < period + 1) throw new Error("Not enough data for RSI");
+        if (closes.length < period + 1) throw new Error(`Not enough data for RSI ${period}  for ${symbol} with interval ${interval}`);
         return RSI.calculate({ period, values: closes });
     }
 
@@ -319,7 +319,39 @@ export default class Indicators {
         return EMA.calculate({ period, values: closes });
     }
 
+    /**
+     * Calcula o OBV (On Balance Volume) usando a biblioteca technicalindicators.
+     */
+    public calculateOBV(symbol: string, interval: Interval): number[] {
+        const klines = DataManager.getInstance().getKlines(symbol, interval);
+        if (!klines) throw new Error(`Klines not found for ${symbol} with interval ${interval}`);
+        const closes = klines.getClosePrices();
+        const volumes = klines.getVolumes();
+        if (closes.length < 2) throw new Error("Not enough data for OBV");
+        return OBV.calculate({ close: closes, volume: volumes });
+    }
 
-
+    /**
+     * Calcula o Stochastic RSI usando a biblioteca technicalindicators.
+     */
+    public calculateStochRSI(symbol: string, interval: Interval, rsiPeriod = 14, stochasticPeriod = 14, kPeriod = 3, dPeriod = 3): { stochRSI: number[], k: number[], d: number[]; } {
+        const klines = DataManager.getInstance().getKlines(symbol, interval);
+        if (!klines) throw new Error(`Klines not found for ${symbol} with interval ${interval}`);
+        const closes = klines.getClosePrices();
+        if (closes.length < rsiPeriod + stochasticPeriod) throw new Error("Not enough data for StochRSI");
+        const result = StochasticRSI.calculate({
+            values: closes,
+            rsiPeriod,
+            stochasticPeriod,
+            kPeriod,
+            dPeriod
+        });
+        // O resultado é um array de objetos { stochRSI, k, d }
+        return {
+            stochRSI: result.map(r => r.stochRSI),
+            k: result.map(r => r.k),
+            d: result.map(r => r.d)
+        };
+    }
 
 }

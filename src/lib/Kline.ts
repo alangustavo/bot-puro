@@ -1,4 +1,5 @@
 import type { KlineEvent } from "./EventFactory";
+import { formatAllDate } from "./utils";
 
 export default class Kline {
     public startTime: number;
@@ -23,6 +24,32 @@ export default class Kline {
         this.low = 0;
         this.volume = 0;
         this.trades = 0;
+    }
+
+
+    /**
+     * 
+     * @param obj 
+     * @returns 
+     */
+    public static fromObject(obj: {
+        openTime: number;
+        open: number;
+        close: number;
+        high: number;
+        low: number;
+        volume: number;
+        closeTime: number;
+    }): Kline {
+        const kline = new Kline();
+        kline.startTime = obj.openTime;
+        kline.closeTime = obj.closeTime;
+        kline.open = obj.open;
+        kline.close = obj.close;
+        kline.high = obj.high;
+        kline.low = obj.low;
+        kline.volume = obj.volume;
+        return kline;
     }
 
     public static fromEvent(event: KlineEvent): Kline {
@@ -72,5 +99,20 @@ export default class Kline {
         kline.volume = Number.parseFloat(data[5]);
         kline.trades = data[8];
         return kline;
+    }
+
+    formatDate(ms: number): string {
+        return formatAllDate(ms);
+    }
+
+    public getFormatedStartTime(): String {
+        return this.formatDate(this.startTime);
+    }
+
+    public getFormatedCloseTime(): String {
+        return this.formatDate(this.closeTime);
+    }
+    public toString(): string {
+        return `Kline(${this.symbol}, ${this.interval}, ${this.startTime} = ${this.formatDate(this.startTime)}/${this.formatDate(this.closeTime)}, O: ${this.open}, H: ${this.high}, L: ${this.low}, C: ${this.close}, V: ${this.volume})`;
     }
 }

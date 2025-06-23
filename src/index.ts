@@ -1,32 +1,18 @@
-import BinanceStreamManager from "./lib/BinanceStreamManager";
-import ChatManager from "./lib/ChatManager";
+
 import dotenv from 'dotenv';
-import Kline from "./lib/Kline";
-import Klines from "./lib/Klines";
-import DataManager from './lib/DataManager';
-import Indicators from "./lib/Indicators";
-import type { Status } from './lib/types';
 import Database from "./lib/Database";
-import Operation from "./lib/Operation";
-import BotSMA from "./lib/BotSMA";
-import BotSupportResistance from './lib/BotSupportResistance';
-import BotSMASupportResistance from "./lib/BotSMASupportResistance";
-import { TradingBot, TradingBotConfig } from "./lib/TradingBot";
-import { BotSupperTrend, BotSupperTrendConfig } from "./lib/BotSuperTrend";
-import { BotRSIEMA, BotRSIMAConfig } from "./lib/BotRSIEMA";
+import { BotRSIEMA2, BotRSIMA2Config } from './lib/BotRSIEMA2';
 dotenv.config();
 
 console.log('Starting bot...');
 console.log(`URL: ${process.env.BINANCE_STREAM_URL}`);
 (async () => {
     await Database.getInstance();
-    const config = new BotRSIMAConfig(
+    const config = new BotRSIMA2Config(
         'SOLUSDT',
-        '1m',
-        '15m',
-        7, 9, 11, 0.01, 0.005
+        '1h', 7, 9, 11, 0.98, 0.005, 0.99 // Configuração do BotRSIEMA2
     );
-    const bot = new BotRSIEMA(Number(process.env.TELEGRAM_CHAT_ID), config);
+    const bot = new BotRSIEMA2(Number(process.env.TELEGRAM_CHAT_ID), config);
     await bot.start();
 
 

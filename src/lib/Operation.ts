@@ -1,5 +1,7 @@
 import ChatManager from "./ChatManager";
 import Database from "./Database";
+import he from 'he';
+import { formatAllDate } from "./utils";
 
 export default class Operation {
 
@@ -30,29 +32,33 @@ export default class Operation {
         this.sellPrice = 0; // This will be set when the operation is closed
         this.sellDate = 0; // This will be set when the operation is closed
         this.sellCriteria = ''; // This will be set when the operation is closed
-        this.sendOperationToTelegram();
+        // this.sendOperationToTelegram();
+    }
+
+    formatDate(ms: number): string {
+        return formatAllDate(ms);
     }
 
     public getBuyMessage(price: number): string {
         return `
 SYMBOL.......: ${this.symbol}
 BUY PRICE....: ${this.buyPrice}
-BUY DATE.....: ${new Date(this.buyDate).toLocaleString()}
+BUY DATE.....: ${this.formatDate(this.buyDate)}
 BUY CRITERIA.: ${this.buyCriteria}
-CURRENT PRICE: ${price}
-P/L..........: N/A`;
+CURRENT PRICE: ${price}`;
     }
 
     public toString(): string {
         return `
+OPERATION ID.: ${this.operationId || 'NEW'}
 SYMBOL.......: ${this.symbol}
 BUY PRICE....: ${this.buyPrice}
-BUY DATE.....: ${new Date(this.buyDate).toLocaleString()}
+BUY DATE.....: ${this.formatDate(this.buyDate)}
 BUY CRITERIA.: ${this.buyCriteria}
 SELL PRICE...: ${this.sellPrice}
-SELL DATE....: ${new Date(this.sellDate).toLocaleString()}
+SELL DATE....: ${this.sellDate ? this.formatDate(this.sellDate) : 'N/A'}
 SELL CRITERIA: ${this.sellCriteria}
-P/L..........: ${(this.sellPrice / this.buyPrice) - 1 * 100}%`;
+P/L..........: ${(((this.sellPrice / this.buyPrice) - 1) * 100).toFixed(2)}%`;
     }
 
     public async sell(sellPrice: number, sellDate: number, sellCriteria: string): Promise<void> {
@@ -60,14 +66,22 @@ P/L..........: ${(this.sellPrice / this.buyPrice) - 1 * 100}%`;
         this.sellDate = sellDate;
         this.sellCriteria = sellCriteria;
         await this.save();
-        this.sendOperationToTelegram();
+        // this.sendOperationToTelegram();
 
+
+    }
+    protected escapeHtml(text: string): string {
+        return he.encode(text);
     }
 
     private async sendOperationToTelegram(): Promise<void> {
 
         const chatManager = await ChatManager.getInstance();
-        chatManager.sendMessage(this.chatId, `<code>${this.toString()}</code>`);
+        if (this.chatId === 999999) {
+            return; // Não envia mensagens para o chat de testes
+        }
+
+        chatManager.sendMessage(this.chatId, `<pre>${this.escapeHtml(this.toString())}</pre>`);
     }
 
     public async save(): Promise<void> {
@@ -99,24 +113,27 @@ P/L..........: ${(this.sellPrice / this.buyPrice) - 1 * 100}%`;
         if (!this.operationId && result && result.lastID) {
             this.operationId = result.lastID;
         }
+
     }
 
-    public async getOpenOperations(chatId: number): Promise<Operation[]> {
+
+    public static async getOpenOperation(chatId: number): Promise<Operation | null> {
         const db = await Database.getInstance();
         const rows = await db.all(
-            'SELECT * FROM operations WHERE chatId = ? AND sellPrice = 0',
+            'SELECT * FROM operations WHERE chatId = ? AND sellPrice = 0 ORDER BY buyDate DESC LIMIT 1',
             [chatId]
-        ) as Operation[];
-
-        return rows.map((row) => {
-            return new Operation(
-                row.chatId,
-                row.symbol,
-                row.buyPrice,
-                row.buyDate,
-                row.buyCriteria,
-            );
-        });
+        ) as any[];
+        if (rows.length === 0) return null;
+        const row = rows[0];
+        const op = new Operation(
+            row.chatId,
+            row.symbol,
+            row.buyPrice,
+            row.buyDate,
+            row.buyCriteria
+        );
+        op.operationId = row.operationId;
+        return op;
     }
 
 };
