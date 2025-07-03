@@ -4,9 +4,8 @@ import { Interval } from './types';
 import Indicators from './Indicators';
 import Operation from './Operation';
 import CsvWriter from "./CsvWriter";
-import { formatAllDate } from "./utils";
-import { rsi } from "technicalindicators";
-import he from 'he';
+import { addSecondsToDate, formatAllDate } from './utils';
+
 
 
 export type StochRSIStatus =
@@ -48,10 +47,10 @@ class BotStochRSIConfig extends BotConfig {
         public kPeriod: number = 3,
         public dPeriod: number = 3,
         // Configuração de Riscos
-        public stopLossPercent: number = 2 / 100, // 5% Stop Loss
-        public stopGainPercent: number = 10 / 100, // 10% Stop Gain
-        public trailingStopLossPercent: number = 1 / 100, // 2.5% Trailing Stop Loss
-        public minimumProfitPercent: number = 1.2 / 100 // 0.5% Minimum Profit
+        public stopLossPercent: number = 1 / 100, // 5% Stop Loss
+        public stopGainPercent: number = 0.5 / 100, // 10% Stop Gain
+        public trailingStopLossPercent: number = 0.3 / 100, // 2.5% Trailing Stop Loss
+        public minimumProfitPercent: number = 0.3 / 100 // 0.5% Minimum Profit
     ) {
         super();
     }
@@ -92,7 +91,11 @@ class BotStochRSI extends Bot {
 
     private operations: Operation[] = []; // List of operations performed by the bot
 
-
+    private gains: number = 0; // Total gains from operations
+    private totalOperations: number = 0; // Total number of operations performed
+    private plTotal: number = 1; // Total profit/loss from operation
+    private lastSellDate: number = 0; // Date of the last buy operation
+    private lastSellPrice: number = 0; // Price of the last buy operation
     private csvFileName: string;
     private csv: CsvWriter; // CSV writer for logging results
 
@@ -132,6 +135,8 @@ class BotStochRSI extends Bot {
 
         const actualDate = (date == 0) ? startTimes[startTimes.length - 1] / 1000 : date;
         const actualDateString = formatAllDate(actualDate);
+
+        const logDate = new Date().getTime();
 
         // Check RSI Indicators Short Interval
         const stochRSIIndicator = i.calculateStochRSI(this.config.symbol, this.config.interval, this.config.stochRsiPeriod, this.config.kPeriod, this.config.dPeriod);
@@ -211,15 +216,6 @@ class BotStochRSI extends Bot {
             opReason += `\nEMA DOWN ${shortEma.toFixed(3)} < ${longEma.toFixed(3)}\nPrevious ${previoShortEma.toFixed(3)}/${previoLongEma.toFixed(3)}`;
         }
 
-        // Determine bot intention based on Stoch RSI and EMA status
-        /**
-         * - Stoch RSI K > D e K < 80
-         * - RSI entre 40 e 80
-         * - OBV atual > OBV anterior
-         * - EMA Short > EMA Long e diferença > 0.5%
-         * - Stoch RSI anterior: K < 30
-         */
-
         const isStochRSICrossDown = (stochK < stochD) && (previoStochK > previoStochD);
 
         const isRSIDown = stochRSI < previoStochRSI;
@@ -240,53 +236,20 @@ class BotStochRSI extends Bot {
         ];
 
         const activeSellSignals = sellSignals.filter(Boolean).length;
+        const ad = addSecondsToDate(actualDate, 0); // Add one day in seconds
+        const ld = addSecondsToDate(this.lastSellDate, 60 * 60); // Add one day in seconds
 
         if (
-
-            // stochK > 30 && stochK < 40 &&
-            //(stochRSI !== 100 && previoStochRSI !== 100) && // Evita saturação
-            // previoStochRSI !== 0 &&
             previoStochK > previoStochD &&
-            stochK > stochD
-            // (crossUpRSI || UpKD) &&
-            // (crossEma || upEma)
-
-            //RSI STOCH K PREVIO TEM QUE SER ENTRE 30 E 40 E NÃO PODE TER O STOCHRSI 100 PREVIO E ATUAL NEM O RSI PREVIO = 0;
-            // (this.stochRSIStatus === 'CROSS_UP_KD' || this.stochRSIStatus === 'UP_K_D')
-            // && (this.emaStatus === 'CROSS_UP_EMA' || this.emaStatus === 'UP_EMA')
-            // && stochRSI < 50
-            // stochK > stochD && stochK < 80
-            // && stochRSI > 40 && stochRSI < 80
-            // && obv > previoObv
-            // && upEma && (shortEma - longEma) / longEma > 0.005
-            // && previoStochK < 30
-            // Tendência iniciando
-            // stochK >= 50 &&                  // Já passou da zona neutra
-            // stochD >= 30 &&                   // Média móvel curta também reagindo
-            // stochRSI >= 50 && stochRSI < 99 &&  // Não está saturado (não é topo)
-            // shortEma > longEma &&             // Tendência de alta
-            // obv >= previoObv                 // Volume estável ou crescente
-
-
-
-            // stochK > stochD &&
-            // stochK > 30 &&
-            // shortEma > longEma &&
-            // upEma && (shortEma - longEma) / longEma > 0.007 &&
-            // // stochRSI > 40 && stochRSI < 80
-            // stochRSI > previoStochRSI &&
-            // stochRSI === 100
-
+            stochK > stochD &&
+            (upEma || crossEma) //&&
+            // rsiShort > rsiLong &&
+            // obv > previoObv &&
+            // (this.lastSellPrice <= actualPrice || (ad && ld && ad > ld)) // Ensure at least one day has passed since last sell
         ) {
             this.intention = 'BUY';
         } else if (
-            /**
-             * Stoch RSI K = 100	K e D em 100 ou próximo disso
-             * RSI = 100	Sinal de sobrecompra
-             * OBV	DECRESCENTE ou próximo de pico
-             */
-            activeSellSignals >= 4) {
-            // this.stochRSIStatus === 'CROSS_DOWN_KD' || this.emaStatus === 'DOWN_EMA') {
+            activeSellSignals >= 4 && this.buyPrice && actualPrice / this.buyPrice > 1) {
             this.intention = 'SELL';
         } else {
             this.intention = 'HOLD';
@@ -295,8 +258,8 @@ class BotStochRSI extends Bot {
         this.header = `Date,Status,Symbol,openPrice,highPrice,lowPrice,closPrice,volume,StochRSI,PrevioStochRSI,PrevioK,PrevioD,K,D,PrevioShortEma,PrevioLongEma,ShortEma,LongEma,PrevioObv,Obv,PrevioRsiShort,PrevioRsiLong,RsiShort,RsiLong`;
         const row = `${actualDateString},${this.status},${this.config.symbol},${openPrice},${highPrice},${lowPrice},${closePrice},${volume},${stochRSI.toFixed(3)},${previoStochRSI},${previoStochK.toFixed(3)},${previoStochD.toFixed(3)},${stochK.toFixed(3)},${stochD.toFixed(3)},${previoShortEma.toFixed(3)},${previoLongEma.toFixed(3)},${shortEma.toFixed(3)},${longEma.toFixed(3)},${previoObv.toFixed(3)}, ${obv.toFixed(2)},${previoRsiShort.toFixed(3)},${previoRsiLong.toFixed(3)},${rsiShort.toFixed(3)},${rsiLong.toFixed(3)}`;
 
-        this.csv.writeCsv(this.csvFileName, this.header, row);
-
+        // this.csv.writeCsv(this.csvFileName, this.header, row);
+        console.log(`[${formatAllDate(logDate)}] Kline o ${formatAllDate(actualDate)} o $${actualPrice.toFixed(2)} PK ${previoStochK.toFixed(3)} > PD ${previoStochD.toFixed(3)} ${previoStochK > previoStochD ? "OK!" : "NOK"} | K ${stochK.toFixed(3)} > D ${stochD.toFixed(3)} ${stochK > stochD ? "OK!" : "NOK"} | ${stochRSI.toFixed(3)} | ${this.intention} | ${this.status}`);
 
         if (this.status == 'SOLD') {
 
@@ -382,13 +345,14 @@ class BotStochRSI extends Bot {
             }
             indicators += `Minimum P/L.......: ${actualPrice} < ${minimumLossPrice} || ${actualPrice} > ${minimumProfitPrice} ${minimumCriteria ? 'OK' : 'NOT'}\n`;
             // Check for sell signal
+            console.log(`[${formatAllDate(logDate)}] Kline ${formatAllDate(actualDate)} Price $${this.buyPrice.toFixed(2)} PL ${(pl * 100).toFixed(2)}% StopLoss ${this.stopLossPrice.toFixed(2)} (${((this.stopLossPrice / this.buyPrice - 1) * 100).toFixed(2)}%)`);
             if (this.intention === 'SELL' && minimumCriteria) {
                 this.sendMessage(`SELL signal detected at ${actualPrice.toFixed(2)} with P/L ${(pl * 100).toFixed(2)}%`);
                 this.closeOperation(actualPrice, opReason, actualDate, indicators);
                 // this.sendMessage(message);
             } else if (actualPrice < this.stopLossPrice && this.stopLossPrice > 0 && minimumCriteria) {
                 this.sendMessage(`STOP LOSS triggered at ${this.stopLossPrice.toFixed(2)} with price ${actualPrice.toFixed(2)}`);
-                this.closeOperation(this.stopLossPrice, `STOP LOSS ${opReason}`, actualDate, indicators);
+                this.closeOperation(actualPrice, `STOP LOSS ${opReason}`, actualDate, indicators);
 
             } else if (this.stopGainPrice && actualPrice > this.stopGainPrice && minimumCriteria) {
                 this.closeOperation(actualPrice, `STOP GAIN ${opReason}`, actualDate, indicators);
@@ -431,7 +395,23 @@ class BotStochRSI extends Bot {
             this.results.writeCsv(this.resultsFileName, this.headerResult, operation.toString());
             this.results.writeCsv(this.resultsFileName, this.header, indicators);
             this.buyPrice = null; // Reset buy price after selling
+            const pl = ((operation.sellPrice / operation.buyPrice) - 1) * 100;
+            this.lastSellDate = operation.sellDate;
+            this.totalOperations++;
+            this.plTotal *= (operation.sellPrice / operation.buyPrice);
+            if (pl > 0) {
+                this.gains++;
+            }
             operation.save();
+
+            const csvOperation = new CsvWriter('./operations');
+            const timeLapse = (operation.sellDate - operation.buyDate) / 1000 / 60; // Convert to seconds
+            const timeLapseBuy = (operation.buyDate - this.lastSellDate) / 1000 / 60; // Convert to seconds
+            const headerOperation = 'TimeLapse(m)Buy, Buy Date, Sell Date, Time Lapse (m), Buy Price Actual, BuyPrice, Sell Price Actual, SellPrice,P/L (%),Total P/L (%),Gains/Lost';
+            const row = `${timeLapseBuy},${formatAllDate(operation.buyDate)},${formatAllDate(operation.sellDate)},${timeLapse},${operation.actualBuyPrice},${operation.buyPrice.toFixed(2)},${operation.actualSellPrice},${operation.sellPrice.toFixed(2)},${pl.toFixed(3)}%,${((this.plTotal - 1) * 100).toFixed(3)}%,${this.gains}/${this.totalOperations}`;
+            csvOperation.writeCsv("op_" + this.csvFileName, headerOperation, row);
+
+
         } else {
             console.error(`No operation to close. ${sellPrice} ${criteria} ignored.`);
             return;

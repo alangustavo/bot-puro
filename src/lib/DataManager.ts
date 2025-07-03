@@ -22,11 +22,14 @@ export default class DataManager {
 
     public getKlines(symbol: string, interval: Interval, limit = 1000): Klines {
         const index = `${symbol.toLowerCase()}_${interval}`;
+
         let klines = this.data.get(index);
         if (!klines) {
             klines = new Klines(symbol, interval, limit);
             this.setKlines(klines);
         }
+        // console.log(`DataManager.getKlines(${symbol}, ${interval}, ${limit}) - index: ${index} ${klines.getKey()} ${klines.getKlines().length} klines`);
+        // console.log(`${klines.getLastKline()}`);
         return klines;
     }
 

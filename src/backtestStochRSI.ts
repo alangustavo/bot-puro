@@ -11,8 +11,8 @@ import { BotStochRSI, BotStochRSIConfig } from './lib/BotStochRSI';
 
 // === CONFIGURAÇÕES DO BACKTEST ===
 const symbol = 'SOLUSDT';
-const interval = '1d';
-const shortMinutesInterval = 60 * 24; // Intervalo de 1 hora
+const interval = '15m';
+const shortMinutesInterval = 15; // Intervalo de 1 hora
 // const longInterval = '1d';
 // const longMinutesInterval = 60 * 24;
 const chatId = 999999; // Qualquer número, não envia mensagens reais
@@ -59,7 +59,7 @@ function* monthRange(y1: number, m1: number, y2: number, m2: number) {
         // Se o CSV não existe, tenta baixar e extrair
         if (!require('fs').existsSync(csvPath)) {
             if (!require('fs').existsSync(zipPath)) {
-                await downloadAndExtractBinanceKlines(symbol, interval, year.toString(), month);
+                await downloadAndExtractBinanceKlines(symbol, "1m", year.toString(), month);
             } else {
                 // Se o zip existe mas o csv não, extrai novamente
                 await require('fs').createReadStream(zipPath)
@@ -78,6 +78,7 @@ function* monthRange(y1: number, m1: number, y2: number, m2: number) {
         candles = candles.concat(readBinanceCsvCandles(file));
     }
 
+    console.log(`Total de candles lidos: ${candles.length}`);
     // 3. Preparar Klines e DataManager para 1m e 15m
     const klinesLimit = 500;
     const klines = new BacktestKlines(symbol, interval, klinesLimit);

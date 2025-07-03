@@ -4,8 +4,6 @@ import { formatAllDate } from "./utils";
 export default class Kline {
     public startTime: number;
     public closeTime: number;
-    public symbol: string;
-    public interval: string;
     public open: number;
     public close: number;
     public high: number;
@@ -16,8 +14,6 @@ export default class Kline {
     private constructor() {
         this.startTime = 0;
         this.closeTime = 0;
-        this.symbol = '';
-        this.interval = '';
         this.open = 0;
         this.close = 0;
         this.high = 0;
@@ -56,8 +52,6 @@ export default class Kline {
         const kline = new Kline();
         kline.startTime = event.k.t;
         kline.closeTime = event.k.T;
-        kline.symbol = event.k.s;
-        kline.interval = event.k.i;
         kline.open = Number.parseFloat(event.k.o);
         kline.close = Number.parseFloat(event.k.c);
         kline.high = Number.parseFloat(event.k.h);
@@ -113,6 +107,6 @@ export default class Kline {
         return this.formatDate(this.closeTime);
     }
     public toString(): string {
-        return `Kline(${this.symbol}, ${this.interval}, ${this.startTime} = ${this.formatDate(this.startTime)}/${this.formatDate(this.closeTime)}, O: ${this.open}, H: ${this.high}, L: ${this.low}, C: ${this.close}, V: ${this.volume})`;
+        return `Kline(${this.startTime} = ${this.formatDate(this.startTime)}, O: ${this.open.toFixed(3)}, H: ${this.high.toFixed(3)}, L: ${this.low.toFixed(3)}, C: ${this.close.toFixed(3)}, V: ${this.volume.toFixed(3)})`;
     }
 }

@@ -1,0 +1,59 @@
+P/L..........: -1.46%
+BUY INDICATORS DAY:
+Stoch RSI K D RSI.: K 100.000 D 91.862 RSI 100.000 OK!
+Stoch RSI Previous: K 100.000 D 72.612 RSI 100.000 OK!
+OBV...............: 6765636.08 CRESCENTE Previous 6761308.05
+OBV EMA Short/Long: -206566.018/-4162962.517 NOK Previous -1949616.543/-5255822.378
+RSI Short/Long....: 67.540/65.850 Previous 67.490/65.830
+EMA S/L...........: 178.547/176.952 OK! Previous 177.593/175.678
+
+BUY INDICATORS SHORT:
+Stoch RSI K D RSI.: K 33.333 D 22.222 RSI 100.000 OK!
+Stoch RSI Previous: K 0.000 D 33.333 RSI 0.000
+OBV...............: 88652.94 CRESCENTE Previous 87420.60
+OBV EMA Short/Long: 88764.475/88719.484 NOK Previous 88792.359/88726.138
+RSI Short/Long....: 61.860/55.310 Previous 53.180/51.190
+EMA S/L...........: 179.391/179.306 OK! Previous 179.364/179.287
+
+
+P/L..........: -1.46%
+BUY INDICATORS DAY:
+Stoch RSI K D RSI.: K 100.000 D 91.862 RSI 100.000 OK!
+Stoch RSI Previous: K 100.000 D 72.612 RSI 100.000 OK!
+OBV...............: 6765636.08 CRESCENTE Previous 6761308.05
+OBV EMA Short/Long: -206566.018/-4162962.517 NOK Previous -1949616.543/-5255822.378
+RSI Short/Long....: 67.540/65.850 Previous 67.490/65.830
+EMA S/L...........: 178.547/176.952 OK! Previous 177.593/175.678
+
+BUY INDICATORS SHORT:
+Stoch RSI K D RSI.: K 33.333 D 22.222 RSI 100.000 OK!
+Stoch RSI Previous: K 0.000 D 33.333 RSI 0.000OBV...............: 88652.94 CRESCENTE Previous 87420.60
+OBV EMA Short/Long: 88764.475/88719.484 NOK Previous 88792.359/88726.138
+RSI Short/Long....: 61.860/55.310 Previous 53.180/51.190
+EMA S/L...........: 179.391/179.306 OK! Previous 179.364/179.287
+Stop Loss.........: 2.00%
+Stop Gain.........: 20.00%
+Stop Loss Price...: 175.91
+Stop Gain Price...: 215.40
+trailing Price....: 177.71
+
+
+BUY INDICATORS DAY:
+Stoch RSI K D RSI.: K 66.667 D 33.599 RSI 100.000 OK!
+Stoch RSI Previous: K 33.333 D 11.642 RSI 100.000 OK!
+OBV...............: -1740353.59 CRESCENTE Previous -2845821.30
+OBV EMA Short/Long: -2225509.627/-3450287.779 NOK Previous -2346798.636/-3621281.198
+RSI Short/Long....: 61.510/61.500 Previous 53.390/57.380
+EMA S/L...........: 171.110/169.294 OK! Previous 164.079/164.871
+
+BUY INDICATORS SHORT:
+Stoch RSI K D RSI.: K 100.000 D 88.889 RSI 100.000 OK!
+Stoch RSI Previous: K 100.000 D 77.778 RSI 100.000OBV...............: 225784.46 CRESCENTE Previous 213158.17
+OBV EMA Short/Long: 167729.493/125116.832 NOK Previous 153215.752/115050.070
+RSI Short/Long....: 85.060/75.390 Previous 84.120/74.630
+EMA S/L...........: 177.261/176.226 OK! Previous 177.041/176.035
+Stop Loss.........: 2.00%
+Stop Gain.........: 20.00%
+Stop Loss Price...: 174.58
+Stop Gain Price...: 213.77
+trailing Price....: 176.36

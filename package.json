@@ -11,6 +11,7 @@
     "backtest": "ts-node-dev --transpile-only ./src/backtestRSIEMA.ts",
     "rsi": "ts-node-dev --transpile-only ./src/backtestRSI.ts",
     "stochRSI": "ts-node-dev --transpile-only ./src/backtestStochRSI.ts",
+    "stochRSISL": "ts-node-dev --transpile-only ./src/backtestStochRSIShortLong.ts",
     "bot": "ts-node-dev --respawn --transpile-only ./src/test.ts"
   },
   "author": "",

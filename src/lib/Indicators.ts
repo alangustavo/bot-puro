@@ -311,12 +311,18 @@ export default class Indicators {
     /**
      * Calcula a EMA (Exponential Moving Average) usando a biblioteca technicalindicators.
      */
-    public calculateEMA(symbol: string, interval: Interval, period = 14): number[] {
-        const klines = DataManager.getInstance().getKlines(symbol, interval);
-        if (!klines) throw new Error(`Klines not found for ${symbol} with interval ${interval}`);
-        const closes = klines.getClosePrices();
-        if (closes.length < period) throw new Error("Not enough data for EMA");
-        return EMA.calculate({ period, values: closes });
+    public calculateEMA(symbol: string, interval: Interval, period = 14, data: number[] = []): number[] {
+        if (data.length == 0) {
+            const klines = DataManager.getInstance().getKlines(symbol, interval);
+            if (!klines) throw new Error(`Klines not found for ${symbol} with interval ${interval}`);
+            const closes = klines.getClosePrices();
+            if (closes.length < period) throw new Error("Not enough data for EMA");
+            return EMA.calculate({ period, values: closes });
+        } else {
+            if (data.length < period) throw new Error("Not enough data for EMA with provided data");
+            return EMA.calculate({ period, values: data });
+        }
+
     }
 
     /**

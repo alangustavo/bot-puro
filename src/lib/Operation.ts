@@ -8,10 +8,12 @@ export default class Operation {
     public operationId: number | null;
     public chatId: number;
     public symbol: string;
-    public buyPrice: number;
+    public actualBuyPrice: number | null = null; // Preenchido quando a operação é aberta com o preço atual
+    public actualSellPrice: number | null = null; // Preenchido quando a operação é fechada com o preço atual
+    public buyPrice: number; // preço efetivo de compra, ajustado para 0.1% acima do preço de mercado
     public buyDate: number;
     public buyCriteria: string;
-    public sellPrice: number;
+    public sellPrice: number; // preço efetivo de venda, ajustado para 0.1% abaixo do preço de mercado
     public sellDate: number;
     public sellCriteria: string;
     /**
@@ -26,6 +28,7 @@ export default class Operation {
         this.operationId = null; // This will be set by the database
         this.chatId = chatId;
         this.symbol = symbol;
+        this.actualBuyPrice = buyPrice; // Preenchido quando a operação é aberta com o preço atual
         this.buyPrice = buyPrice * 1.001;
         this.buyDate = buyDate;
         this.buyCriteria = buyCriteria;
@@ -55,14 +58,17 @@ SYMBOL.......: ${this.symbol}
 BUY PRICE....: ${this.buyPrice}
 BUY DATE.....: ${this.formatDate(this.buyDate)}
 BUY CRITERIA.: ${this.buyCriteria}
+BUY ACTUAL...: ${this.actualBuyPrice ? this.actualBuyPrice : 'N/A'}
 SELL PRICE...: ${this.sellPrice}
 SELL DATE....: ${this.sellDate ? this.formatDate(this.sellDate) : 'N/A'}
 SELL CRITERIA: ${this.sellCriteria}
+SELL ACTUAL..: ${this.actualSellPrice ? this.actualSellPrice : 'N/A'}
 P/L..........: ${(((this.sellPrice / this.buyPrice) - 1) * 100).toFixed(2)}%`;
     }
 
     public async sell(sellPrice: number, sellDate: number, sellCriteria: string): Promise<void> {
         this.sellPrice = sellPrice * 0.999; // Ajuste de 0.1% para venda
+        this.actualSellPrice = sellPrice; // Preenchido quando a operação é fechada com o preço atual
         this.sellDate = sellDate;
         this.sellCriteria = sellCriteria;
         await this.save();

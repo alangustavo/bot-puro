@@ -2,17 +2,15 @@
 import dotenv from 'dotenv';
 import Database from "./lib/Database";
 import { BotRSIEMA2, BotRSIMA2Config } from './lib/BotRSIEMA2';
+import { BotStochRSI, BotStochRSIConfig } from './lib/BotStochRSI';
 dotenv.config();
 
 console.log('Starting bot...');
 console.log(`URL: ${process.env.BINANCE_STREAM_URL}`);
 (async () => {
     await Database.getInstance();
-    const config = new BotRSIMA2Config(
-        'SOLUSDT',
-        '1h', 7, 9, 11, 0.98, 0.005, 0.99 // Configuração do BotRSIEMA2
-    );
-    const bot = new BotRSIEMA2(Number(process.env.TELEGRAM_CHAT_ID), config);
+    const config = new BotStochRSIConfig('SOLUSDT', '1d');
+    const bot = new BotStochRSI(Number(process.env.TELEGRAM_CHAT_ID), config);
     await bot.start();
 
 
